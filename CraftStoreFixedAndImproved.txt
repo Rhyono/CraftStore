@@ -1,0 +1,33 @@
+﻿; This Add-on is not created by, affiliated with or sponsored by ZeniMax
+; Media Inc. or its affiliates. The Elder Scrolls® and related logos are
+; registered trademarks or trademarks of ZeniMax Media Inc. in the United
+; States and/or other countries. All rights reserved.
+; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
+
+## Title: CraftStore
+## APIVersion: 101032
+## Version: 2.69
+## SavedVariables: CraftStore_Account CraftStore_Character
+## Author: AlphaLemming, BlackSwan, Rhyono
+## Description: A tool for crafting research, with style and recipe tracking and new crafting interfaces. 
+## OptionalDependsOn: FurniturePreview ItemSaver FCOItemSaver MasterMerchant TamrielTradeCentre LibChatMessage
+## DependsOn: LibBinaryEncode>=32 LibAddonMenu-2.0>=32
+
+CraftStore_Helpers.lua
+CraftStore_Lang.lua
+XML/UI/CraftStore_Font.xml
+CraftStore_VarInit.lua
+;CraftStore_Flask.lua
+CraftStore_Styles.lua
+CraftStore.lua
+;CraftStore_MainMenu.lua
+CraftStore_LAM.lua
+CraftStore_Events.lua
+XML/UI/CraftStore.xml
+XML/UI/CraftStore_Flask.xml
+XML/UI/CraftStore_Cook.xml
+XML/UI/CraftStore_Rune.xml
+XML/UI/CraftStore_Style.xml
+XML/UI/CraftStore_Recipe.xml
+XML/UI/CraftStore_Blueprint.xml
+XML/BINDINGS/Bindings.xml

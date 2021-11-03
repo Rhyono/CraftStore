@@ -1,0 +1,89 @@
+<GuiXml>
+  <Controls>
+      <TopLevelControl name="CraftStoreFixed_Style_Window" clampedToScreen="true" mouseEnabled="true" movable="true" hidden="true">
+	  <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.coords.style={self:GetLeft(),self:GetTop()}</OnMouseUp>
+      <Dimensions x="770" y="661" />	  
+      <Controls>
+        <Backdrop name="CraftStoreFixed_Style_BG" centerColor="000000" edgeColor="202020">
+          <Dimensions x="770" y="661"/>
+          <AnchorFill/>
+          <Edge edgeSize="1"/>	  
+        </Backdrop>
+        <Backdrop name="CraftStoreFixed_Style" centerColor="000000" edgeColor="000000">
+          <Anchor point="CENTER" relativeTo="CraftStoreFixed_Style_BG" relativePoint="CENTER"/>
+          <Dimensions x="750" y="641"/>
+            <Controls>
+              <Backdrop name="$(parent)TopSection" centerColor="101010" edgeColor="202020">
+                <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_Style"/>
+                <Dimensions x="750" y="40"/>
+                <Edge edgeSize="1"/>
+              </Backdrop>
+              <Button layer="0">
+                <AnchorFill/>
+              </Button>
+              <Label name="$(parent)Header" font="ZoFontGame" color="FFAA33">
+                <Anchor point="2" relativePoint="2" relativeTo="$(parent)TopSection" offsetX="10"/>
+              </Label>		  
+              <Button name="$(parent)HideButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+                <FontColors normalColor="E8DFAF"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="130" relativeTo="$(parent)TopSection"/>
+                <Dimensions y="22" x="200"/>
+                <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideStyles()</OnClicked>
+              </Button>
+              <Button name="$(parent)HideCrownButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+                <FontColors normalColor="E8DFAF"/>
+                <Anchor point="RIGHT" relativePoint="RIGHT" offsetX="200" relativeTo="$(parent)HideButton"/>
+                <Dimensions y="22" x="200"/>
+                <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideCrownStyles()</OnClicked>
+              </Button>			  
+              <Button name="$(parent)HidePerfectedButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+                <FontColors normalColor="E8DFAF"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="130" relativeTo="$(parent)TopSection"/>
+                <Dimensions y="22" x="200"/>
+                <OnClicked>CraftStoreFixedAndImprovedLongClassName.HidePerfectedStyles()</OnClicked>
+              </Button>
+              <Button name="$(parent)CloseButton" clickSound="Click">
+                <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" offsetX="-5"/>
+                <Dimensions y="22" x="22"/>
+                <Textures normal="esoui/art/buttons/decline_up.dds" pressed="esoui/art/buttons/decline_down.dds" mouseOver="esoui/art/buttons/decline_over.dds"/>
+                <OnClicked>CraftStoreFixedAndImprovedLongClassName.CloseStyle()</OnClicked>
+              </Button>				  
+              <Control name="$(parent)PreviewType">
+                <Dimensions x="150" y="20" />
+                <Anchor point="LEFT" relativePoint="LEFT" offsetX="-150" relativeTo="$(parent)CloseButton"/>
+                <OnInitialized>
+                  self.name = self:GetNamedChild("Name")
+                  self.dropdown = ZO_ComboBox_ObjectFromContainer(self:GetNamedChild("Dropdown"))
+                </OnInitialized>
+                <Controls>
+                  <Control name="$(parent)Dropdown" inherits="ZO_ComboBox">
+                    <Dimensions x="150"/>
+                    <Anchor point="LEFT"/>
+                  </Control>
+                </Controls>
+              </Control>
+              <Backdrop name="$(parent)Panel" tier="1" centerColor="101010" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+                <Anchor point="1" relativePoint="4" relativeTo="$(parent)TopSection" offsetY="1"/>
+                <Dimensions x="750" y="600"/>
+                <Edge edgeSize="1"/>
+                <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+                <Controls>
+                  <Control name="$(parent)ScrollChild" resizeToFitDescendents="true">
+                    <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+                    <Controls>
+                      <Control name="$(parent)Styles" hidden="true">
+                        <Anchor point="3" relativePoint="3" relativeTo="$(parent)"/>
+                      </Control>
+                      <Control name="$(parent)Sets" hidden="true">
+                        <Anchor point="3" relativePoint="3" relativeTo="$(parent)"/>
+                      </Control>
+                    </Controls>
+                  </Control>
+                </Controls>
+              </Backdrop>
+            </Controls>
+        </Backdrop>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>	

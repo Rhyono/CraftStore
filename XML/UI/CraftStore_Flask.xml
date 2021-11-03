@@ -1,0 +1,55 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl hidden="true" name="CraftStoreFixed_Flask">
+      <Anchor point="128" relativePoint="128" relativeTo="GuiRoot"/>
+      <Dimensions x="544" y="801"/>
+      <Controls>
+        <Button layer="0"><AnchorFill/></Button>
+        <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020"><AnchorFill/><Edge edgeSize="1"/></Backdrop>
+        <Backdrop name="$(parent)Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetX="11" offsetY="11"/>
+          <Dimensions x="522" y="40"/><Edge edgeSize="1"/>
+        </Backdrop>
+        <Backdrop name="$(parent)Potions" centerColor="101010" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Header" offsetY="1"/>
+          <Dimensions x="522" y="656"/><Edge edgeSize="1"/>
+          <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+          <Controls>
+            <Control name="$(parent)ScrollChild">
+              <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+            </Control>
+          </Controls>
+        </Backdrop>
+        <Label name="$(parent)Name" text="CraftStoreFlask" font="ZoFontGame" color="FFAA33">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)Header" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)Info" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Name" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)AmountLabel" text="" font="CraftStoreFixedFont" color="E8DFAF">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)SearchAmount" offsetX="10"/>
+          <OnInitialized>self:SetText(GetString(SI_TRADING_HOUSE_POSTING_QUANTITY)..":")</OnInitialized>
+        </Label>
+        <EditBox name="$(parent)Amount" font="ZoFontGame" color="E8DFAF" maxInputCharacters="2" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)AmountLabel" offsetX="14"/>
+          <Dimensions x="25" y="24"/>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020"><Dimensions x="36" y="30"/><Anchor point="128"/><Edge edgeSize="1"/></Backdrop>
+          </Controls>
+        </EditBox>
+        <EditBox name="$(parent)Search" font="ZoFontGame" color="E8DFAF" maxInputCharacters="100" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="8" relativePoint="8" relativeTo="$(parent)SearchAmount" offsetX="-12"/>
+          <Dimensions x="150" y="24"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020"><Dimensions x="160" y="30"/><Anchor point="128"/><Edge edgeSize="1"/></Backdrop>
+          </Controls>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <OnFocusLost></OnFocusLost>
+          <OnEscape>self:LoseFocus()</OnEscape>
+          <OnEnter>self:LoseFocus()</OnEnter>
+        </EditBox>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

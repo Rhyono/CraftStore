@@ -1,0 +1,1069 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="CraftStoreFixed_ButtonFrame" topmost="true">
+      <Anchor point="128" relativePoint="128" relativeTo="GuiRoot"/>
+      <OnInitialized>self:SetDimensions(GuiRoot:GetWidth(),GuiRoot:GetHeight())</OnInitialized>
+      <Controls>
+        <Backdrop name="$(parent)ButtonBG" alpha="0" centerColor="40FF0000" edgeColor="60FF0000" clampedToScreen="true" movable="true" mouseEnabled="true">
+          <Dimensions x="60" y="60"/>
+          <Edge edgeSize="1"/>
+          <OnMouseEnter>WINDOW_MANAGER:SetMouseCursor(12);self:SetAlpha(1)</OnMouseEnter>
+          <OnMouseExit>WINDOW_MANAGER:SetMouseCursor(0);self:SetAlpha(0)</OnMouseExit>
+          <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.button={self:GetLeft(),self:GetTop()}</OnMouseUp>
+        </Backdrop>
+        <Button name="$(parent)Button" topmost="true">
+          <Anchor point="128" relativePoint="128" relativeTo="$(parent)ButtonBG"/>
+          <Dimensions x="40" y="40"/>
+          <Controls>
+            <Texture name="$(parent)Texture" textureFile="CraftStoreFixedAndImproved/DDS/cs.dds">
+              <Anchor point="128"/>
+              <Dimensions x="40" y="40"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.ShowMain()</OnClicked>
+        </Button>
+      </Controls>
+    </TopLevelControl>
+    <TopLevelControl name="CraftStoreFixed_QuestFrame" layer="0">
+      <Anchor point="128" relativePoint="128" offsetX="-15" relativeTo="GuiRoot"/>
+      <OnInitialized>self:SetDimensions(GuiRoot:GetWidth(),GuiRoot:GetHeight())</OnInitialized>
+      <Controls>
+        <Backdrop name="CraftStoreFixed_Quest" hidden="true" centerColor="FFFFFF" edgeColor="00000000" movable="true" mouseEnabled="true">
+          <Dimensions x="500" y="400"/>
+          <Edge edgeSize="1"/>
+          <Center file="esoui/art/crafting/crafting_alchemy_slottingbg.dds"/>
+          <Controls>
+            <Label name="$(parent)Head" font="ZoFontGame" color="FFAA33" horizontalAlignment="1" text="CraftStoreQuest">
+              <Anchor point="1" relativePoint="1" relativeTo="CraftStoreFixed_Quest" offsetY="55"/>
+            </Label>
+            <Label name="$(parent)Text" font="ZoFontGame" color="A0A090" horizontalAlignment="0">
+              <Dimensions x="420" y="250"/>
+              <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_Quest" offsetX="70" offsetY="90"/>
+            </Label>
+          </Controls>
+          <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.questbox={self:GetLeft(),self:GetTop()}</OnMouseUp>
+        </Backdrop>
+        <TextBuffer name="CraftStoreFixed_Alarm" horizontalAlignment="1" font="ZoFontWinH1">
+          <Anchor point="128" relativePoint="128" relativeTo="GuiRoot" offsetY="-400"/>
+          <Dimensions x="1000" y="800"/>
+          <LineFade fadeBegin="8" fadeDuration="2"/>
+          <OnInitialized>self:SetClearBufferAfterFadeout(true)</OnInitialized>
+        </TextBuffer>
+      </Controls>
+    </TopLevelControl>
+    <TopLevelControl hidden="true" clampedToScreen="true" movable="true" mouseEnabled="true" name="CraftStoreFixed_Panel" allowBringToTop="true" layer="1">
+      <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.position={self:GetLeft(),self:GetTop()}</OnMouseUp>
+      <Dimensions x="1143" y="688"/>
+      <Controls>
+        <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+          <AnchorFill/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Label name="$(parent)Headline" font="ZoFontGame" color="FFFFFF">
+          <Anchor point="1" relativePoint="1" relativeTo="$(parent)" offsetY="5"/>
+          <OnInitialized>self:SetText("|cFFAA33"..CraftStoreFixedAndImprovedLongClassName.Title.."|r "..CraftStoreFixedAndImprovedLongClassName.Version)</OnInitialized>
+        </Label>
+        <Button name="$(parent)CloseButton" clickSound="Click">
+          <Anchor point="9" relativePoint="9" relativeTo="$(parent)" offsetX="-5" offsetY="5"/>
+          <Dimensions y="25" x="25"/>
+          <Textures normal="esoui/art/buttons/decline_up.dds" pressed="esoui/art/buttons/decline_down.dds" mouseOver="esoui/art/buttons/decline_over.dds"/>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.ControlCloseAll()</OnClicked>
+        </Button>
+        <Button name="$(parent)OptionButton" clickSound="Click">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)CloseButton" offsetX="-5"/>
+          <Dimensions y="35" x="35"/>
+          <Textures normal="esoui/art/chatwindow/chat_options_up.dds" pressed="esoui/art/chatwindow/chat_options_down.dds" mouseOver="esoui/art/chatwindow/chat_options_over.dds"/>
+          <OnClicked>LibAddonMenu2:OpenToPanel(CraftStoreFixedAndImprovedLongClassName.LAM)</OnClicked>
+        </Button>
+        <Button name="$(parent)QuestButton">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)OptionButton" offsetX="-5"/>
+          <Dimensions y="32" x="32"/>
+          <Textures normal="esoui/art/inventory/inventory_tabicon_quest_up.dds" mouseOver="esoui/art/inventory/inventory_tabicon_quest_over.dds"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow1" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetX="11" offsetY="65"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow2" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow1" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow3" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow2" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow4" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow3" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow5" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow4" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow6" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow5" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow7" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow6" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow8" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow7" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow9" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow8" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow10" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow9" offsetY="62"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow11" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow10" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow12" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow11" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow13" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow12" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow14" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow13" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow15" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow14" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow16" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow15" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow17" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow16" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+        <Button name="$(parent)Traitrow18" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow17" offsetY="1"/>
+          <Dimensions x="180" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>	
+        <Backdrop name="$(parent)FenceGold" centerColor="101010" edgeColor="202020">
+          <Edge edgeSize="1"/>
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Traitrow9" offsetY="10"/>
+          <Dimensions x="171" y="42"/>
+          <Controls>
+            <Button name="$(parent)Text" horizontalAlignment="1" verticalAlignment="1" font="CraftStoreFixedFont">
+              <AnchorFill/>
+              <FontColors normalColor="E8DFAF"/>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bc')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+          </Controls>
+        </Backdrop>
+        <Button name="$(parent)12Hours" horizontalAlignment="1" verticalAlignment="1" font="ZoFontWinH4">
+          <FontColors normalColor="E8DFAF" mouseOverColor="FFAA33"/>
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Traitrow18" offsetY="10"/>
+          <Dimensions x="85" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.SetTimer(self,12)</OnClicked>
+        </Button>
+        <Button name="$(parent)24Hours" horizontalAlignment="1" verticalAlignment="1" font="ZoFontWinH4">
+          <FontColors normalColor="E8DFAF" mouseOverColor="FFAA33"/>
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)12Hours" offsetX="1"/>
+          <Dimensions x="85" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.SetTimer(self,24)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonStyles" clickSound="Click">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)12Hours" offsetY="1"/>
+          <Dimensions x="42" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/art/icons/quest_book_001.dds" name="$(parent)Texture">
+              <Anchor point="128"/>
+              <Dimensions x="30" y="30"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.SetAllStyles()</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonRune" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonStyles" offsetX="1"/>
+          <Dimensions x="42" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/art/icons/crafting_components_runestones_017.dds" name="$(parent)Texture">
+              <Anchor point="128"/>
+              <Dimensions x="30" y="30"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneView(1)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonRecipes" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonRune" offsetX="1"/>
+          <Dimensions x="42" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/art/icons/quest_scroll_001.dds" name="$(parent)Texture">
+              <Anchor point="128"/>
+              <Dimensions x="30" y="30"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_Recipe_Window);CraftStoreFixedAndImprovedLongClassName.RecipeShowCategory(CraftStoreFixedAndImprovedLongClassName.Character.recipe)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonBlueprint" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonRecipes" offsetX="1"/>
+          <Dimensions x="42" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="EsoUI/Art/Crafting/provisioner_indexIcon_furnishings_up.dds" name="$(parent)Texture">
+              <Anchor point="128"/>
+              <Dimensions x="32" y="32"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_Blueprint_Window);CraftStoreFixedAndImprovedLongClassName.BlueprintShowCategory(CraftStoreFixedAndImprovedLongClassName.Character.furniture)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonCharacters" horizontalAlignment="1" verticalAlignment="1" font="ZoFontWinH3" clickSound="Click">
+          <FontColors normalColor="E8DFAF" mouseOverColor="FFAA33"/>
+          <Anchor point="6" relativePoint="12" relativeTo="$(parent)ButtonBlueprint" offsetX="10"/>
+          <Dimensions x="344" y="49"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.DrawCharacters();CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_CharacterPanel)</OnClicked>
+        </Button>
+		<Button name="$(parent)ButtonCraftedSets" horizontalAlignment="1" verticalAlignment="1" font="ZoFontWinH4" clickSound="Click">
+          <FontColors normalColor="E8DFAF" mouseOverColor="FFAA33"/>
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonCharacters" offsetY="6" offsetX="10"/>
+          <Dimensions x="288" y="37"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_SetPanel)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonWayshrine1" clickSound="Click">
+          <Anchor point="6" relativePoint="3" relativeTo="$(parent)ButtonCraftedSets" offsetX="30" offsetY="-4"/>
+          <Dimensions x="32" y="32"/>
+          <Textures normal="esoui/art/icons/poi/poi_wayshrine_incomplete.dds" mouseOver="esoui/art/icons/poi/poi_wayshrine_complete.dds"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128" offsetX="-10"/>
+              <Dimensions x="73" y="37"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/Art/guild/guildbanner_icon_daggerfall.dds" name="$(parent)Texture">
+              <Anchor point="128" offsetX="-23"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.TravelToNode(self,1)</OnClicked>
+        </Button>
+        <Button name="$(parent)ButtonWayshrine2" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonWayshrine1" offsetX="43"/>
+          <Dimensions x="32" y="32"/>
+          <Textures normal="esoui/art/icons/poi/poi_wayshrine_incomplete.dds" mouseOver="esoui/art/icons/poi/poi_wayshrine_complete.dds"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128" offsetX="-10"/>
+              <Dimensions x="74" y="37"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/Art/guild/guildbanner_icon_aldmeri.dds" name="$(parent)Texture">
+              <Anchor point="128" offsetX="-23"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.TravelToNode(self,2)</OnClicked>
+        </Button>	
+        <Button name="$(parent)ButtonWayshrine3" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ButtonWayshrine2" offsetX="43"/>
+          <Dimensions x="32" y="32"/>
+          <Textures normal="esoui/art/icons/poi/poi_wayshrine_incomplete.dds" mouseOver="esoui/art/icons/poi/poi_wayshrine_complete.dds"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128" offsetX="-10"/>
+              <Dimensions x="74" y="37"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture textureFile="esoui/Art/guild/guildbanner_icon_ebonheart.dds" name="$(parent)Texture">
+              <Anchor point="128" offsetX="-23"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.TravelToNode(self,3)</OnClicked>
+        </Button>	
+        <Control name="$(parent)Craft2">
+          <Controls>
+            <Control name="$(parent)Line1">
+              <Anchor point="3" relativePoint="9" relativeTo="CraftStoreFixed_PanelTraitrow1" offsetX="2" offsetY="-28"/>
+            </Control>
+            <Control name="$(parent)Line2">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line1" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line3">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line2" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line4">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line3" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line5">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line4" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line6">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line5" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line7">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line6" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line8">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line7" offsetX="37"/>
+            </Control>
+            <Control name="$(parent)Line9">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line8" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line10">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line9" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line11">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line10" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line12">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line11" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line13">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line12" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line14">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line13" offsetX="28"/>
+            </Control>
+          </Controls>
+        </Control>
+        <Control name="$(parent)Craft1">
+          <Controls>
+            <Control name="$(parent)Line1">
+              <Anchor point="3" relativePoint="9" relativeTo="CraftStoreFixed_PanelTraitrow10" offsetX="2" offsetY="-28"/>
+            </Control>
+            <Control name="$(parent)Line2">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line1" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line3">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line2" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line4">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line3" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line5">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line4" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line6">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line5" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line7">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line6" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line8">
+              <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_PanelCraft2Line14" offsetX="37"/>
+            </Control>
+            <Control name="$(parent)Line9">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line8" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line10">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line9" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line11">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line10" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line12">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line11" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line13">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line12" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line14">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line13" offsetX="28"/>
+            </Control>
+          </Controls>
+        </Control>
+        <Control name="$(parent)Craft6">
+          <Controls>
+            <Control name="$(parent)Line1">
+              <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_PanelCraft1Line7" offsetX="37"/>
+            </Control>
+            <Control name="$(parent)Line2">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line1" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line3">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line2" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line4">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line3" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line5">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line4" offsetX="28"/>
+            </Control>
+            <Control name="$(parent)Line6">
+              <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_PanelCraft1Line14" offsetX="37"/>
+            </Control>
+          </Controls>	
+        </Control>
+		<Button name="$(parent)Traitrow19" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="9" relativeTo="CraftStoreFixed_PanelCraft6Line5" offsetX="152" offsetY="28"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow20" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow19" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>	
+		<Button name="$(parent)Traitrow21" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow20" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow22" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow21" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow23" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow22" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow24" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow23" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow25" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow24" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow26" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow25" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>
+		<Button name="$(parent)Traitrow27" horizontalAlignment="2" verticalAlignment="1" font="CraftStoreFixedFont">
+          <FontColors normalColor="E8DFAF"/>
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)Traitrow26" offsetY="1"/>
+          <Dimensions x="232" y="25"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true)</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+        </Button>	
+        <Control name="$(parent)Craft7">
+          <Controls>  
+            <Control name="$(parent)Line1">
+              <Anchor point="3" relativePoint="9" relativeTo="CraftStoreFixed_PanelTraitrow19" offsetX="2" offsetY="-28"/>
+            </Control>
+            <Control name="$(parent)Line2">
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)Line1" offsetX="28"/>
+            </Control>					
+		  </Controls>
+		</Control>  
+        <Backdrop name="$(parent)Research2Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="8" relativeTo="CraftStoreFixed_PanelCraft6Line6" offsetX="36" offsetY="28"/>
+          <Dimensions x="288" y="30"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Texture textureFile="esoui/art/icons/ability_tradecraft_008.dds" name="$(parent)Texture">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="5"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+            <Label name="$(parent)Data" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="39"/>
+              <Dimensions x="210" y="30"/>
+            </Label>
+            <Label name="$(parent)Slot" font="CraftStoreFixedFont" horizontalAlignment="2" verticalAlignment="1">
+              <Anchor point="8" relativePoint="8" relativeTo="$(parent)" offsetX="-5"/>
+              <Dimensions x="70" y="30"/>
+            </Label>
+          </Controls>
+        </Backdrop>
+        <Backdrop name="$(parent)Research2Window" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research2Header" offsetY="1"/>
+          <Dimensions x="288" y="96"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Button name="$(parent)Line1" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetY="3"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                 <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line2" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line1"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line3" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line2"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+          </Controls>
+        </Backdrop>
+		
+        <Backdrop name="$(parent)Research1Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research2Window" offsetY="15"/>
+          <Dimensions x="288" y="30"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Texture textureFile="esoui/art/icons/ability_smith_007.dds" name="$(parent)Texture">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="5"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+            <Label name="$(parent)Data" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="39"/>
+              <Dimensions x="210" y="30"/>
+            </Label>
+            <Label name="$(parent)Slot" font="CraftStoreFixedFont" horizontalAlignment="2" verticalAlignment="1">
+              <Anchor point="8" relativePoint="8" relativeTo="$(parent)" offsetX="-5"/>
+              <Dimensions x="70" y="30"/>
+            </Label>
+          </Controls>
+        </Backdrop>
+        <Backdrop name="$(parent)Research1Window" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research1Header" offsetY="1"/>
+          <Dimensions x="288" y="96"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Button name="$(parent)Line1" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetY="3"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line2" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line1"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line3" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line2"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+          </Controls>
+        </Backdrop>
+		
+        <Backdrop name="$(parent)Research6Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research1Window" offsetY="15"/>
+          <Dimensions x="288" y="30"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Texture textureFile="esoui/art/icons/ability_tradecraft_009.dds" name="$(parent)Texture">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="5"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+            <Label name="$(parent)Data" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="39"/>
+              <Dimensions x="210" y="30"/>
+            </Label>
+            <Label name="$(parent)Slot" font="CraftStoreFixedFont" horizontalAlignment="2" verticalAlignment="1">
+              <Anchor point="8" relativePoint="8" relativeTo="$(parent)" offsetX="-5"/>
+              <Dimensions x="70" y="30"/>
+            </Label>
+          </Controls>
+        </Backdrop>
+        <Backdrop name="$(parent)Research6Window" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research6Header" offsetY="1"/>
+          <Dimensions x="288" y="96"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Button name="$(parent)Line1" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetY="3"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line2" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line1"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line3" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line2"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+          </Controls>
+        </Backdrop>
+
+        <Backdrop name="$(parent)Research7Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research6Window" offsetY="16"/>
+          <Dimensions x="288" y="30"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Texture textureFile="esoui/art/icons/passive_jewelerengraver.dds" name="$(parent)Texture">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="5"/>
+              <Dimensions x="26" y="26"/>
+            </Texture>
+            <Label name="$(parent)Data" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)" offsetX="39"/>
+              <Dimensions x="210" y="30"/>
+            </Label>
+            <Label name="$(parent)Slot" font="CraftStoreFixedFont" horizontalAlignment="2" verticalAlignment="1">
+              <Anchor point="8" relativePoint="8" relativeTo="$(parent)" offsetX="-5"/>
+              <Dimensions x="70" y="30"/>
+            </Label>
+          </Controls>
+        </Backdrop>		
+		<Backdrop name="$(parent)Research7Window" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Research7Header" offsetY="1"/>
+          <Dimensions x="288" y="96"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Button name="$(parent)Line1" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetY="3"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line2" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line1"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+            <Button name="$(parent)Line3" font="CraftStoreFixedFont" horizontalAlignment="0" verticalAlignment="1">
+              <FontColors normalColor="E8DFAF"/>
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)Line2"/>
+              <Dimensions x="200" y="30"/>
+              <Controls>
+                <Label name="$(parent)Time" font="CraftStoreFixedFont" color="E8DFAF" horizontalAlignment="2" verticalAlignment="1">
+                  <Anchor point="2" relativePoint="8" relativeTo="$(parent)"/>
+                  <Dimensions x="80" y="30"/>
+                </Label>
+              </Controls>
+              <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,false,self,'bl')</OnMouseEnter>
+              <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false)</OnMouseExit>
+            </Button>
+          </Controls>
+        </Backdrop>
+		
+        <Backdrop hidden="true" name="CraftStoreFixed_SetPanel" tier="1" centerColor="080808" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+          <Anchor point="12" relativePoint="12" relativeTo="CraftStoreFixed_Panel" offsetX="-11" offsetY="-11"/>
+          <Dimensions x="288" y="383"/>
+          <Edge edgeSize="1"/>
+          <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+          <Controls>
+            <Button layer="0">
+              <AnchorFill/>
+            </Button>
+            <Control name="$(parent)ScrollChild">
+              <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+            </Control>
+          </Controls>
+        </Backdrop>
+        <Backdrop name="CraftStoreFixed_CharacterPanel" tier="1" centerColor="000000" edgeColor="202020" hidden="true" clampedToScreen="true" movable="true" mouseEnabled="true">
+          <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.coords.overview={self:GetLeft(),self:GetTop()}</OnMouseUp>
+          <Dimensions x="601" y="801"/>
+          <Edge edgeSize="1"/>
+          <Controls>
+            <Backdrop name="$(parent)TopSection" centerColor="101010" edgeColor="202020">
+              <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_CharacterPanel" offsetX="11" offsetY="11"/>
+              <Dimensions x="579" y="30"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Label name="$(parent)Header" font="ZoFontGame" color="FFAA33">
+              <Anchor point="2" relativePoint="2" relativeTo="$(parent)TopSection" offsetX="10"/>
+            </Label>
+            <Button name="$(parent)CloseButton" clickSound="Click">
+              <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" offsetX="-5"/>
+              <Dimensions y="22" x="22"/>
+              <Textures normal="esoui/art/buttons/decline_up.dds" pressed="esoui/art/buttons/decline_down.dds" mouseOver="esoui/art/buttons/decline_over.dds"/>
+              <OnClicked>CraftStoreFixed_CharacterPanel:SetHidden(true)</OnClicked>
+            </Button>
+            <Backdrop name="$(parent)Box" centerColor="000000" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+              <Anchor point="3" relativePoint="6" relativeTo="$(parent)TopSection" offsetY="1"/>
+              <Dimensions x="579" y="748"/>
+              <Edge edgeSize="1"/>
+              <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+              <Controls>
+                <Control name="$(parent)ScrollChild">
+                  <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+                </Control>
+              </Controls>
+            </Backdrop>
+          </Controls>
+        </Backdrop>
+      </Controls>
+    </TopLevelControl>
+    <TopLevelControl name="CraftStoreFixed">
+      <OnInitialized/>
+      <OnUpdate>CraftStoreFixedAndImprovedLongClassName.Queue()</OnUpdate>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

@@ -1,0 +1,411 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="CraftStoreFixed_Rune" clampedToScreen="true" mouseEnabled="true" movable="true" hidden="true">
+	  <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.coords.rune={self:GetLeft(),self:GetTop()}</OnMouseUp>
+      <Dimensions x="554" y="801"/>	
+      <Controls>
+        <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+		  <Dimensions x="554" y="801"/>
+          <AnchorFill/>
+          <Edge edgeSize="1"/>
+        </Backdrop>		
+        <Backdrop name="$(parent)Header" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="3" relativeTo="$(parent)" offsetX="11" offsetY="11"/>
+          <Dimensions x="308" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Button name="$(parent)SpaceButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Header" offsetX="1"/>
+          <Dimensions x="100" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked></OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="EsoUI/Art/MainMenu/menuBar_inventory_up.dds">
+              <Dimensions y="36" x="36"/>
+              <Anchor point="2"/>
+            </Texture>
+			<Label name="$(parent)Name" text="" font="ZoFontGame">
+			  <Anchor point="2" relativePoint="2" relativeTo="$(parent)Texture" offsetX="36"/>
+			</Label>
+          </Controls>
+        </Button>		
+        <Button name="$(parent)CreateButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)SpaceButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(6);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/tutorial/smithing_tabicon_creation_up.dds">
+              <Dimensions y="36" x="36"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>        
+        <Button name="$(parent)RefineButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CreateButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(7);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_deconstruction_up.dds">
+              <Dimensions y="36" x="36"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)FurnitureButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)RefineButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(12);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="EsoUI/Art/Crafting/provisioner_indexIcon_furnishings_up.dds">
+              <Dimensions y="40" x="40"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+		<Button name="$(parent)CloseButton" clickSound="Click" hidden="true">
+		  <Anchor point="8" relativePoint="8" relativeTo="$(parent)Header" offsetX="-5"/>
+		  <Dimensions y="22" x="22"/>
+		  <Textures normal="esoui/art/buttons/decline_up.dds" pressed="esoui/art/buttons/decline_down.dds" mouseOver="esoui/art/buttons/decline_over.dds"/>
+		  <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneView(1)</OnClicked>
+		</Button>
+        <Backdrop name="$(parent)SearchAmount" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)Header" offsetY="1"/>
+          <Dimensions x="317" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Button name="$(parent)LevelButton" clickSound="Click" horizontalAlignment="1" verticalAlignment="1" font="ZoFontGame">
+          <FontColors normalColor="E8DFAF" mouseOverColor="FFAA33"/>
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)SearchAmount" offsetX="1"/>
+          <Dimensions x="214" y="40"/>
+          <OnClicked>CraftStoreFixed_RuneMenu:ToggleHidden()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+        </Button>
+        <Backdrop hidden="true" name="$(parent)Menu" level="1" tier="1" centerColor="080808" edgeColor="202020">
+          <Anchor point="9" relativePoint="12" relativeTo="$(parent)LevelButton" offsetY="1"/>
+          <Dimensions x="250" y="395"/>
+          <Edge edgeSize="3"/>
+          <Controls>
+            <Button layer="0">
+              <AnchorFill/>
+            </Button>
+          </Controls>
+        </Backdrop>
+        <Button name="$(parent)ArmorButton" clickSound="Click">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)SearchAmount" offsetY="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(1,ITEMTYPE_GLYPH_ARMOR);CraftStoreFixedAndImprovedLongClassName.RuneSetValue(6);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/enchantment_armor_healthboost.dds">
+              <Dimensions y="28" x="28"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)WeaponButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)ArmorButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(1,ITEMTYPE_GLYPH_WEAPON);CraftStoreFixedAndImprovedLongClassName.RuneSetValue(6);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/enchantment_weapon_berserking.dds">
+              <Dimensions y="28" x="28"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)JewelryButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)WeaponButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(1,ITEMTYPE_GLYPH_JEWELRY);CraftStoreFixedAndImprovedLongClassName.RuneSetValue(6);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/enchantment_jewelry_increaseweapondamage.dds">
+              <Dimensions y="28" x="28"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)HandmadeButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)JewelryButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(9);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/crafting_components_runestones_017.dds">
+              <Dimensions y="28" x="28"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)WritButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)HandmadeButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(11);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/master_writ_enchanting.dds">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)FavoriteButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)WritButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(10);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/characterwindow/equipmentbonusicon_full.dds" color="FFFF00">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)FavoriteFurnitureButton" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)FavoriteButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(13);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/characterwindow/equipmentbonusicon_full.dds">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>		
+        <Backdrop name="$(parent)RefineAllButtonBG" centerColor="101010" edgeColor="202020">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)FavoriteFurnitureButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Button name="$(parent)RefineAllButton" clickSound="Click">
+          <Anchor point="128" relativePoint="128" relativeTo="$(parent)RefineAllButtonBG"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RefineAll(...)</OnClicked>
+          <MouseButton button="2" enabled="true"/>
+          <Controls>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/tutorial/smithing_tabicon_refine_up.dds">
+              <Dimensions y="36" x="36"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)Aspect1Button" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)RefineAllButton" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'tl')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(2,1);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_aspect_up.dds">
+              <Dimensions y="38" x="38"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)Aspect2Button" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Aspect1Button" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'tl')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(2,2);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_aspect_up.dds" color="2DC50E">
+              <Dimensions y="38" x="38"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)Aspect3Button" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Aspect2Button" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'tl')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(2,3);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_aspect_up.dds" color="3A92FF">
+              <Dimensions y="38" x="38"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)Aspect4Button" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Aspect3Button" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'tl')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(2,4);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_aspect_up.dds" color="A02EF7">
+              <Dimensions y="38" x="38"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)Aspect5Button" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Aspect4Button" offsetX="1"/>
+          <Dimensions x="40" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'tl')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(2,5);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/crafting/enchantment_tabicon_aspect_up.dds" color="EECA2A">
+              <Dimensions y="38" x="38"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Backdrop name="$(parent)GlyphSection" centerColor="101010" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)ArmorButton" offsetY="1"/>
+          <Dimensions x="532" y="656"/>
+          <Edge edgeSize="1"/>
+          <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+          <Controls>
+            <Control name="$(parent)ScrollChild">
+              <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+              <Controls>
+                <Control name="$(parent)Refine" hidden="true">
+                  <Anchor point="3" relativePoint="3" relativeTo="$(parent)"/>
+                </Control>
+                <Control name="$(parent)Selection" hidden="true">
+                  <Anchor point="3" relativePoint="3" relativeTo="$(parent)"/>
+                </Control>
+              </Controls>
+            </Control>
+          </Controls>
+        </Backdrop>
+        <Backdrop name="$(parent)GlyphDivider" edgeColor="202020">
+          <Anchor point="3" relativePoint="3" relativeTo="$(parent)GlyphSection" offsetY="40"/>
+          <Dimensions x="522" y="1"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Label name="$(parent)Name" text="CraftStoreRune" font="ZoFontGame" color="FFAA33">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)Header" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)Info" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Name" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)Test" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="3" relativePoint="3" relativeTo="$(parent)GlyphSection" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)AmountLabel" text="" font="CraftStoreFixedFont" color="E8DFAF">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)SearchAmount" offsetX="10"/>
+          <OnInitialized>self:SetText(GetString(SI_TRADING_HOUSE_POSTING_QUANTITY)..":")</OnInitialized>
+        </Label>
+        <EditBox name="$(parent)Amount" font="ZoFontGame" color="E8DFAF" maxInputCharacters="3" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)AmountLabel" offsetX="14"/>
+          <Dimensions x="32" y="24"/>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="40" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+        </EditBox>
+        <EditBox name="$(parent)Search" font="ZoFontGame" color="E8DFAF" maxInputCharacters="100" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="8" relativePoint="8" relativeTo="$(parent)SearchAmount" offsetX="-12"/>
+          <Dimensions x="150" y="24"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="160" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <OnFocusLost>CraftStoreFixedAndImprovedLongClassName.RuneSetValue(5);CraftStoreFixedAndImprovedLongClassName.RuneShowMode()</OnFocusLost>
+          <OnEscape>self:LoseFocus()</OnEscape>
+          <OnEnter>self:LoseFocus()</OnEnter>
+        </EditBox>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

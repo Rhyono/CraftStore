@@ -1,0 +1,187 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl hidden="true" name="CraftStoreFixed_Furnisher">
+      <Anchor point="8" relativePoint="8" relativeTo="GuiRoot"/>
+      <Dimensions x="544" y="801"/>
+      <Controls>
+        <Button layer="0">
+          <AnchorFill/>
+        </Button>
+        <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+          <AnchorFill/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Backdrop name="$(parent)TopSection" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_Furnisher" offsetX="10" offsetY="10"/>
+          <Dimensions x="524" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Button name="$(parent)CategoryButton1" clickSound="Click">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)TopSection" offsetX="1" offsetY="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(1)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_blacksmithing_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton2" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton1" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(2)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_clothing_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton3" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton2" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(3)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_enchanting_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton4" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton3" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(4)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_alchemy_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton5" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton4" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(5)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_provisioning_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton6" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton5" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.FurnisherShowCategory(6)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/inventory/inventory_tabicon_craftbag_woodworking_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Backdrop name="$(parent)InfoSection" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)CategoryButton1" offsetX="-1" offsetY="3"/>
+          <Dimensions x="454" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Backdrop name="$(parent)FoodSection" centerColor="101010" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)InfoSection" offsetY="1"/>
+          <Dimensions x="524" y="660"/>
+          <Edge edgeSize="1"/>
+          <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+          <Controls>
+            <Control name="$(parent)ScrollChild">
+                <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+              <Controls/>
+            </Control>
+          </Controls>
+        </Backdrop>
+        <Label name="$(parent)Name" text="CraftStoreFurnisher" font="ZoFontGame" color="FFAA33">
+          <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" offsetX="-10"/>
+        </Label>
+        <Label name="$(parent)Headline" text="" font="ZoFontWinH3" color="FFAA33">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)TopSection" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)Info" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Headline" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)AmountLabel" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)InfoSection" offsetX="10"/>
+          <OnInitialized>self:SetText(GetString(SI_TRADING_HOUSE_POSTING_QUANTITY)..":")</OnInitialized>
+        </Label>
+        <EditBox name="$(parent)Amount" font="ZoFontGame" color="E8DFAF" maxInputCharacters="2" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)AmountLabel" offsetX="14"/>
+          <Dimensions x="25" y="24"/>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="35" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+        </EditBox>
+        <EditBox name="$(parent)Search" font="ZoFontGame" color="E8DFAF" maxInputCharacters="100" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Amount" offsetX="20"/>
+          <Dimensions x="240" y="24"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="250" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <OnFocusLost>CraftStoreFixedAndImprovedLongClassName.FurnisherRecipeSearch()</OnFocusLost>
+          <OnEscape>self:LoseFocus()</OnEscape>
+          <OnEnter>self:LoseFocus()</OnEnter>
+        </EditBox>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

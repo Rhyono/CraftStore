@@ -1,0 +1,456 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="CraftStoreFixed_Cook" clampedToScreen="true" mouseEnabled="true" movable="true" hidden="true">
+      <OnMouseUp>CraftStoreFixedAndImprovedLongClassName.Account.coords.cook={self:GetLeft(),self:GetTop()}</OnMouseUp>
+      <Dimensions x="578" y="801"/>
+      <Controls>
+        <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+          <AnchorFill/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Backdrop name="$(parent)TopSection" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="3" relativeTo="CraftStoreFixed_Cook" offsetX="10" offsetY="10"/>
+          <Dimensions x="559" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+		<Button name="$(parent)SpaceButton" clickSound="Click">
+          <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" />
+          <Dimensions x="100" y="40"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked></OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <AnchorFill/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="EsoUI/Art/MainMenu/menuBar_inventory_up.dds">
+              <Dimensions y="36" x="36"/>
+              <Anchor point="2"/>
+            </Texture>
+			<Label name="$(parent)Name" text="" font="ZoFontGame">
+			  <Anchor point="2" relativePoint="2" relativeTo="$(parent)Texture" offsetX="36"/>
+			</Label>
+          </Controls>
+        </Button>		
+        <Button name="$(parent)CategoryButton1" clickSound="Click">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)TopSection" offsetX="1" offsetY="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(1)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_meat_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton2" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton1" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(2)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_stew_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton3" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton2" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(3)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_baked_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton4" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton3" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(4)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_meat_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton5" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton4" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(5)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_stew_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton6" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton5" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(6)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_baked_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton7" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton6" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(7)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_stew_up.dds" color="A02EF7">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton8" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton7" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(8)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_spirits_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton9" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton8" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(9)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_wine_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton10" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton9" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(10)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_beer_up.dds" color="2DC50E">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton11" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton10" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(11)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_spirits_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton12" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton11" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(12)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_wine_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton13" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton12" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(13)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_beer_up.dds" color="3A92FF">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton14" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton13" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(14)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_wine_up.dds" color="A02EF7">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton15" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton14" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(15)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/store_indexicon_consumables_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButton16" clickSound="Click">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)CategoryButton15" offsetX="3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(16)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="36"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/treeicons/provisioner_indexicon_stew_up.dds" color="CCAA1A">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>	
+        <Button name="$(parent)CategoryButtonFavorites" clickSound="Click">
+          <Anchor point="1" relativePoint="4" relativeTo="$(parent)CategoryButton16" offsetY="7"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(17)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="40"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/characterwindow/equipmentbonusicon_full.dds" color="FFFF00">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButtonWrit" clickSound="Click">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)CategoryButtonFavorites" offsetX="-3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(18)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="40"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/icons/master_writ_provisioning.dds">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButtonFurniture" clickSound="Click">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)CategoryButtonWrit" offsetX="-3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(19)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="40"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="EsoUI/Art/Crafting/provisioner_indexIcon_furnishings_up.dds">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
+        <Button name="$(parent)CategoryButtonFurnitureFavorites" clickSound="Click">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)CategoryButtonFurniture" offsetX="-3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowCategory(20)</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="40"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="esoui/art/characterwindow/equipmentbonusicon_full.dds">
+              <Dimensions y="22" x="22"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>		
+        <Backdrop name="$(parent)InfoSection" centerColor="101010" edgeColor="202020">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)CategoryButton1" offsetX="-1" offsetY="3"/>
+          <Dimensions x="419" y="40"/>
+          <Edge edgeSize="1"/>
+        </Backdrop>
+        <Backdrop name="$(parent)FoodSection" centerColor="101010" edgeColor="202020" inherits="ZO_ScrollContainerBase">
+          <Anchor point="3" relativePoint="6" relativeTo="$(parent)InfoSection" offsetY="1"/>
+          <Dimensions x="559" y="660"/>
+          <Edge edgeSize="1"/>
+          <OnInitialized>ZO_Scroll_Initialize(self)</OnInitialized>
+          <Controls>
+            <Control name="$(parent)ScrollChild">
+                <OnInitialized>self:SetParent(self:GetParent():GetNamedChild("Scroll"));self:SetAnchor(3,nil,3,0,0)</OnInitialized>
+              <Controls/>
+            </Control>
+          </Controls>
+        </Backdrop>		
+        <Label name="$(parent)Name" text="CraftStoreCook" font="ZoFontGame" color="FFAA33">
+          <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" offsetX="-110"/>
+        </Label>
+        <Label name="$(parent)Headline" text="" font="ZoFontWinH3" color="FFAA33">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)TopSection" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)Info" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Headline" offsetX="10"/>
+        </Label>
+        <Label name="$(parent)AmountLabel" text="" font="ZoFontGame" color="E8DFAF">
+          <Anchor point="2" relativePoint="2" relativeTo="$(parent)InfoSection" offsetX="10"/>
+          <OnInitialized>self:SetText(GetString(SI_TRADING_HOUSE_POSTING_QUANTITY)..":")</OnInitialized>
+        </Label>
+        <EditBox name="$(parent)Amount" font="ZoFontGame" color="E8DFAF" maxInputCharacters="3" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)AmountLabel" offsetX="14"/>
+          <Dimensions x="32" y="24"/>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="40" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+        </EditBox>
+        <EditBox name="$(parent)Search" font="ZoFontGame" color="E8DFAF" maxInputCharacters="100" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
+          <Anchor point="2" relativePoint="8" relativeTo="$(parent)Amount" offsetX="20"/>
+          <Dimensions x="274" y="24"/>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
+              <Dimensions x="284" y="30"/>
+              <Anchor point="128"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+          </Controls>
+          <OnFocusGained>self:SetText("")</OnFocusGained>
+          <OnFocusLost>CraftStoreFixedAndImprovedLongClassName.CookSearchRecipe()</OnFocusLost>
+          <OnEscape>self:LoseFocus()</OnEscape>
+          <OnEnter>self:LoseFocus()</OnEnter>
+        </EditBox>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>

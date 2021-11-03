@@ -1,0 +1,9 @@
+<Bindings>
+  <Layer name="SI_KEYBINDINGS_CATEGORY_GENERAL">
+    <Category name="SI_BINDING_NAME_CRAFTSTORE">
+      <Action name="SHOW_CRAFTSTOREFIXED_WINDOW">
+        <Down>CraftStoreFixedAndImprovedLongClassName.ShowMain()</Down>
+      </Action>
+    </Category>
+  </Layer>
+</Bindings>
