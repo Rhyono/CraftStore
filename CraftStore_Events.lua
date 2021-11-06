@@ -328,7 +328,7 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
   
   CS.Style = CS.STYLE()
   CS.Style.CompileStyles()
-  CS.Style.CompilePartialStyles({[60]=true})
+  CS.Style.CompilePartialStyles({[114]=true,[119]=true})
   CS.Crafting.CompileTraits()
   --cs_flask = CS.CS.Flask()  
   CS.Account = ZO_SavedVars:NewAccountWide('CraftStore_Account',3,GetWorldName(),CS.AccountInit)
@@ -337,8 +337,8 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
 	--build schema for data
 	LBE:DefinePrefix("CSCK28",CS.Name,CS.LBE.Cook,64,LBE:ConvertTable(LBE:ConcatTables(CS.Cook.recipelist,CS.Cook.recipeduplicatelist)))
 	LBE:DefinePrefix("CSFK32",CS.Name,CS.LBE.Furnisher,64,LBE:ConvertTable(CS.Furnisher.recipelist))
-	--LBE:DefinePrefix("CSSK28",CS.Name,CS.LBE.Styles.."Old",64,LBE:ConvertTable(CS.Styles.oldlist))
-	LBE:DefinePrefix("CSSK29",CS.Name,CS.LBE.Styles,64,LBE:ConvertTable(CS.Styles.list))
+	LBE:DefinePrefix("CSSK29",CS.Name,CS.LBE.Styles.."Old",64,LBE:ConvertTable(CS.Styles.oldlist))
+	LBE:DefinePrefix("CSSK32",CS.Name,CS.LBE.Styles,64,LBE:ConvertTable(CS.Styles.list))
 	LBE:DefinePrefix("CSCS29",CS.Name,CS.LBE.Crafting,64,CS.Crafting.list)
 	LBE:DefinePrefix("CSCR29",CS.Name,CS.LBE.Researched,64,CS.Crafting.list) -- intentionally same schema as CSCS, but unique prefix needed
 	-- only applicable for characters with saved vars already
