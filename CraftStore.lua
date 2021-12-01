@@ -3556,7 +3556,7 @@ function CS.Tooltip(c,visible,scale,parent,pos)
 	end
 
 	--Integrate MM graphs
-	if c.data.link and CS.Account.options.displaymm and MasterMerchant then
+	if c.data.link and CS.Account.options.displaymm and MasterMerchant and MasterMerchant.isInitialized then
 		MasterMerchant:addStatsAndGraph(c.text, c.data.link, false)
 	end
 	--Integrate TTC info
