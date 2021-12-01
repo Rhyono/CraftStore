@@ -296,6 +296,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=3,nodes={430,430,430}, item={163070,163085,163082,163077}, zone={744,744,744}},  -- Greymoor:Spell Parasite
   {traits=3,nodes={447,447,447}, item={168012,168027,168019,168024}, zone={783,783,783}},  -- Markarth:Red Eagle's Fury
   {traits=3,nodes={464,464,464}, item={172468,172483,172475,172480}, zone={834,834,834}},  -- Blackwood:Hist Whisperer	
+  {traits=3,nodes={478,478,478}, item={178819,178834,178826,178831}, zone={1272,1272,1272}},  -- Deadlands:Wretched Vitality
 
   {traits=4,nodes={  9,154, 51}, item={ 51098, 43998, 51105, 51110}, zone={  5, 18, 19}},  -- Hist Bark
   {traits=4,nodes={ 13,148, 48}, item={ 48805, 48817, 43849, 48813}, zone={  5, 18, 19}},  -- Magnus' Gift
@@ -312,6 +313,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=5,nodes={ 58,101, 93}, item={ 43834, 48434, 48425, 48430}, zone={ 17, 11, 15}},  -- Vampire's Kiss
   {traits=5,nodes={418,418,418}, item={161234,161249,161241,161246}, zone={743,743,743}},  -- Greymoor:Stuhn's Favor (or 416)
   {traits=5,nodes={461,461,461}, item={173216,173231,173223,173228}, zone={834,834,834}},  -- Blackwood:Diamond's Victory (or 481)	
+  {traits=5,nodes={489,489,489}, item={179657,179762,179754,179759}, zone={1283,1283,1283}},  -- Deadlands:Iron Flask
 
   {traits=6,nodes={338,338,338}, item={131083,131098,131090,131095}, zone={589,589,589}},  -- CC:Mechanical Acuity
   {traits=6,nodes={ 34,156,118}, item={ 49188, 43861, 49195, 49200}, zone={ 14,179, 16}},  -- Night Mother's Gaze
@@ -329,6 +331,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=7,nodes={375,375,375}, item={142804,142819,142811,142816}, zone={407,407,407}},  -- Murkmire:Grave-Stake Collector
   {traits=7,nodes={417,417,417}, item={161608,161623,161620,161615}, zone={743,743,743}},  -- Greymoor:Dragon's Appetite (or 429)
   {traits=7,nodes={483,483,483}, item={172842,172857,172849,172854}, zone={834,834,834}},  -- Blackwood:Heartland Conqueror's
+  {traits=7,nodes={494,494,494}, item={179193,179208,179200,179205}, zone={1272,1272,1272}},  -- Deadlands:Deadlands Demolisher
 
   {traits=8,nodes={386,386,386}, item={147961,147976,147968,147973}, zone={681,681,681}},  -- Elsweyr:Coldharbour's Favorite
   {traits=8,nodes={329,329,329}, item={121914,121929,121921,121926}, zone={467,467,467}},  -- Daedric Trickery  
