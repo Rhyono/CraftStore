@@ -2796,9 +2796,9 @@ end
 function CS.IsItemNeeded(craft,line,trait,id,link)
 	if not craft or not line or not trait then return end
 	if craft < 1 or line < 1 or trait < 1 then return end
-	if CS.Account.crafting.stored[craft][line][trait] == nil then return end
 	local isSet = GetItemLinkSetInfo(link)
-	local mark, need, unneed, storedId = true, {}, {}, CS.Account.crafting.stored[craft][line][trait].id or 0
+	local craftedItem = CS.Account.crafting.stored[craft][line][trait]
+	local mark, need, unneed, storedId = true, {}, {}, craftedItem and craftedItem.id or 0
 	if not CS.Account.options.marksetitems and isSet then mark = false end
 	SELF = false
 	--if needed and optionally allow duplicates
