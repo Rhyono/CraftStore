@@ -3715,7 +3715,7 @@ function CS.TooltipHandler()
   local tt=ItemTooltip.SetTradeItem
   ItemTooltip.SetTradeItem=function(control,tradeWho,slotIndex,...)
     tt(control,tradeWho,slotIndex,...)
-    CS.TooltipShow(control,GetTradeItemLink(slotIndex))
+    CS.TooltipShow(control,GetTradeItemLink(tradeWho,slotIndex))
   end
   local tt=ItemTooltip.SetQuestReward
   ItemTooltip.SetQuestReward=function(control,rewardIndex,...)
