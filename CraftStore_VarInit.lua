@@ -4,7 +4,7 @@ CS.Debug = (GetWorldName() == "PTS" or GetDisplayName()=="@VladislavAksjonov")
 CS.Name = 'CraftStoreFixedAndImproved'
 CS.Title = 'CraftStore'
 CS.Author = 'AlphaLemming, BlackSwan, Rhyono'
-CS.Version = '2.73'
+CS.Version = '2.74'
 CS.Account = nil
 CS.Character = nil
 CS.Init = false
