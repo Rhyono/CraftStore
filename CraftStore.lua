@@ -512,7 +512,10 @@ function CS.Queue()
         end
       end
     end
-    if ZO_Provisioner_IsSceneShowing() and CS.Account.options.usecook then ZO_ProvisionerTopLevelTooltip:SetHidden(true) end
+    if ZO_Provisioner_IsSceneShowing() and CS.Account.options.usecook then
+      ZO_ProvisionerTopLevelTooltip:SetHidden(true) end
+      if PP ~= nil then ZO_ProvisionerTopLevel:SetHidden(true) end
+    end
     if CS.Inspiration ~= '' then
       local c,x = CSLOOT:AcquireObject()
       c:SetHidden(false)
