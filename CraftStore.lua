@@ -576,11 +576,10 @@ function CS.Queue()
       CS.Account.options.usecook
     then
       ZO_ProvisionerTopLevelTooltip:SetHidden(true)
-    end
-
-    if PP ~= nil
-    then
-      ZO_ProvisionerTopLevel:SetHidden(true)
+      if PP ~= nil
+      then
+        ZO_ProvisionerTopLevel:SetHidden(true)
+      end
     end
 
     if CS.Inspiration ~= ''
