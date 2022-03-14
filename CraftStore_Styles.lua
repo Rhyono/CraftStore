@@ -360,7 +360,7 @@ function CS.STYLE()
 			if self.IsCrownStyle(style) then
 				return IsItemLinkBookKnown(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(styles[style][3]))
 			else  
-			    local categoryIndex, collectionIndex = self.GetLoreBookIndicesForStyle(style)
+				local categoryIndex, collectionIndex = self.GetLoreBookIndicesForStyle(style)
 				local _, _, known = GetLoreBookInfo(categoryIndex, collectionIndex, chapter)
 				return known
 			end
