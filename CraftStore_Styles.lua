@@ -336,8 +336,8 @@ function CS.STYLE()
 				return IsItemLinkBookKnown(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(styles[style][3]))
 			else      
 				for chapter = 1,14 do
-					local _, known = GetAchievementCriterion(styles[style][2],chapter)
-					if known == 0 then return false end
+					local known = self.IsKnownStyle(style,chapter)
+					if not known then return false end
 				end
 			return true
 			end
@@ -360,11 +360,18 @@ function CS.STYLE()
 			if self.IsCrownStyle(style) then
 				return IsItemLinkBookKnown(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(styles[style][3]))
 			else  
-				local _, known = GetAchievementCriterion(styles[style][2],chapter)
-				if known == 1 then return true end
+			    local categoryIndex, collectionIndex = self.GetLoreBookIndicesForStyle(style)
+				local _, _, known = GetLoreBookInfo(categoryIndex, collectionIndex, chapter)
+				return known
 			end
 		end
 		return false
+	end
+	
+	function self.GetLoreBookIndicesForStyle(style)
+		local achievementId = styles[style][2]
+		local collectionId = GetAchievementLinkedBookCollectionId(achievementId)
+		return GetLoreBookCollectionIndicesFromCollectionId(collectionId)
 	end
   
 	function self.UpdatePreview(preview)
