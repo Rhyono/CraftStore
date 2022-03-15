@@ -119,8 +119,8 @@ function CS.STYLE()
 	[122] = {2,3002,171913}, -- Sul-Xan
 	[123] = {2,3094,176058}, -- Crimson Oath
 	[124] = {2,3097,178505}, -- Silver Rose
-	--[125] = {2,?,?}, -- Annihilarch's Chosen
-	--[126] = {2,?,?}, -- Fargrave Guardian
+	[125] = {2,3098,178529}, -- Annihilarch's Chosen
+	[126] = {2,3220,178707}, -- Fargrave Guardian
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -232,6 +232,8 @@ function CS.STYLE()
 	[122] = {171912, 171913, 171927, 0}, -- Sul-Xan
 	[123] = {176057, 176058, 176072, 0}, -- Crimson Oath
 	[124] = {178504, 178505, 178519, 0}, -- Silver Rose
+	[125] = {178528, 178529, 178543, 0}, -- Annihilarch's Chosen
+	[126] = {178706, 178707, 178721, 0}, -- Fargrave Guardian
 	}
   
 	--build visual motif number list
