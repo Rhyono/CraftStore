@@ -11,7 +11,7 @@
 ## Author: AlphaLemming, BlackSwan, Rhyono
 ## Description: A tool for crafting research, with style and recipe tracking and new crafting interfaces. 
 ## OptionalDependsOn: FurniturePreview ItemSaver FCOItemSaver MasterMerchant TamrielTradeCentre LibChatMessage
-## DependsOn: LibBinaryEncode>=32 LibAddonMenu-2.0>=32
+## DependsOn: LibBinaryEncode>=34 LibAddonMenu-2.0>=32
 
 CraftStore_Helpers.lua
 CraftStore_Lang.lua
