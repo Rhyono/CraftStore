@@ -1272,9 +1272,13 @@ end
 
 function CS.UpdateInventory()
   local inv = {
-    ZO_PlayerInventoryList,ZO_PlayerBankBackpack,ZO_GuildBankBackpack,
+    ZO_PlayerInventoryList,
+    ZO_PlayerBankBackpack,
+    ZO_GuildBankBackpack,
+    ZO_HouseBankBackpack,
     ZO_SmithingTopLevelDeconstructionPanelInventoryBackpack,
-    ZO_SmithingTopLevelImprovementPanelInventoryBackpack
+    ZO_SmithingTopLevelImprovementPanelInventoryBackpack,
+    ZO_UniversalDeconstructionTopLevel_KeyboardPanelInventoryBackpack
   }
   for x = 1,#inv do
     local puffer = inv[x].dataTypes[1].setupCallback
