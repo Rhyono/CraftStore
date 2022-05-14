@@ -104,6 +104,7 @@ function CS.STYLE()
 	[106] = {2,2849,166973}, -- Thorn Legion
 	[107] = {2,2850,166990}, -- Hazardous Alchemy
 	[108] = {2,2903,167174}, -- Ancestral Akaviri
+	[109] = {2,2904,167191}, -- Ancestral Breton
 	[110] = {2,2905,167271}, -- Ancestral Reach
 	[111] = {2,2926,167944}, -- Nighthollow
 	[112] = {2,2938,167961}, -- Arkthzand Armory
@@ -121,6 +122,12 @@ function CS.STYLE()
 	[124] = {2,3097,178505}, -- Silver Rose
 	[125] = {2,3098,178529}, -- Annihilarch's Chosen
 	[126] = {2,3220,178707}, -- Fargrave Guardian
+	[127] = {2,3228,181662}, -- Dreadsails
+	[129] = {2,3229,181679}, -- Ascendant Order
+	--[130] = {2,0,   182521}, -- Syrabanic Marine
+	[131] = {2,3259,182538}, -- Steadfast Society
+	--[132] = {2,0,   182555}, -- Systres Guardian
+	--[134] = {2,?,X}, -- Ascendant Knight
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -216,7 +223,8 @@ function CS.STYLE()
 	[105] = {160610, 160611, 160625, 0}, -- Ancestral Orc
 	[106] = {166972, 166973, 166987, 0}, -- Thorn Legion
 	[107] = {166989, 166990, 167004, 0}, -- Hazardous Alchemy
-	[108] = {0     , 167174, 0     , 0}, -- Ancestral Akaviri
+	[108] = {167173, 167174, 0,      0}, -- Ancestral Akaviri
+	[109] = {167190, 167191, 167205, 0}, -- Ancestral Breton
 	[110] = {167270, 167271, 167285, 0}, -- Ancestral Reach
 	[111] = {167943, 167944, 167958, 0}, -- Nighthollow
 	[112] = {167960, 167961, 167975, 0}, -- Arkthzand Armory
@@ -234,6 +242,12 @@ function CS.STYLE()
 	[124] = {178504, 178505, 178519, 0}, -- Silver Rose
 	[125] = {178528, 178529, 178543, 0}, -- Annihilarch's Chosen
 	[126] = {178706, 178707, 178721, 0}, -- Fargrave Guardian
+	[128] = {181661, 181662, 181676, 0}, -- Dreadsails
+	[129] = {181678, 181679, 181693, 0}, -- Ascendant Order
+	--[130] = {182520, 182521, 182535, 0}, -- Syrabanic Marine
+	[131] = {182537, 182538, 182552, 0}, -- Steadfast Society
+	--[132] = {182554, 182555, 182569, 0}, -- Systres Guardian
+	--[134] = {X-1, X, X+15, 0}, -- Ascendant Knight
 	}
   
 	--build visual motif number list
