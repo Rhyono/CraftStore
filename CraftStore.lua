@@ -806,7 +806,7 @@ function CS.UpdateStudyLine(control,tracking,craft,line)
   -- set all tracked
   if allTracked then
     control:GetNamedChild('HeaderTexture'):SetColor(1,1,1,1)
-    for x = 1, control:GetNumChildren() - 1 do
+    for x = 2, control:GetNumChildren() - 1 do
       local subcontrol = control:GetChild(x)
       subcontrol:SetCenterColor(0.06,0.06,0.06,1)
       subcontrol:SetEdgeColor(1,1,1,0.12)
@@ -814,7 +814,7 @@ function CS.UpdateStudyLine(control,tracking,craft,line)
   else
     -- set header red
     control:GetNamedChild('HeaderTexture'):SetColor(1,0,0,1)
-    for x = 1, control:GetNumChildren() - 1 do
+    for x = 2, control:GetNumChildren() - 1 do
       local subcontrol = control:GetChild(x)
       -- set individually
       if trackingTable[x] then
