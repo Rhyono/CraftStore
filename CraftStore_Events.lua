@@ -327,12 +327,16 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
   if addOnName ~= CS.Name then return end
   
   CS.Style = CS.STYLE()
+  CS.Style.RemoveUnpublishedStyles()
   CS.Style.CompileStyles()
   CS.Style.CompilePartialStyles({[114]=true,[119]=true})
   CS.Crafting.CompileTraits()
   --cs_flask = CS.CS.Flask()  
   CS.Account = ZO_SavedVars:NewAccountWide('CraftStore_Account',3,GetWorldName(),CS.AccountInit)
   CS.Character = ZO_SavedVars:NewCharacterIdSettings('CraftStore_Character',2,GetWorldName(),CS.CharInit)
+
+  -- remove unpublished furnishing recipies
+  CS.Furnisher.recipelist = CS.FilterPublishedItems(CS.Furnisher.recipelist)
 
 	--build schema for data
 	LBE:DefinePrefix("CSCK28",CS.Name,CS.LBE.Cook,64,LBE:ConvertTable(LBE:ConcatTables(CS.Cook.recipelist,CS.Cook.recipeduplicatelist)))

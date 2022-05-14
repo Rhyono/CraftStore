@@ -131,6 +131,26 @@ function CS.NilCheckSetIfNil(root,default,...)
 	return root
 end
 
+function CS.IsPublishedItem(itemId)
+  local itemName = GetItemLinkName(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(itemId))
+  return itemName ~= nil and itemName ~= ''
+end
+
+function CS.IsPublishedAchievement(achievementId)
+  local achievementName = GetAchievementName(achievementId)
+  return achievementName ~= nil and achievementName ~= ''
+end
+
+function CS.FilterPublishedItems(itemIds)
+  local publishedItemIds = {}
+  for i,itemId in pairs(itemIds) do
+    if CS.IsPublishedItem(itemId) then
+      table.insert(publishedItemIds, itemId)
+    end
+  end
+  return publishedItemIds
+end
+
 CS.Chat = {}
 
 function CS.Chat:Print(str)

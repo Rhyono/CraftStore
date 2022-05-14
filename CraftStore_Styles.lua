@@ -256,6 +256,26 @@ function CS.STYLE()
 		local styleVisualId = styleName:match("%d+")
 		styles[style][4] = styleVisualId ~= nil and styleVisualId or 0 
 	end
+	
+	-- remove unpublished styles to avoid hickups
+	function self.RemoveUnpublishedStyles()
+		local unpublishedStyles = {}
+		for style,data in pairs(styles) do
+			-- every style must have a known representative item
+			if not CS.IsPublishedItem(styles[style][3]) then
+				table.insert(unpublishedStyles,style)
+			end
+			-- non-crown styles must have an known achievement attached
+			if not CS.IsPublishedAchievement(styles[style][2]) then
+				table.insert(unpublishedStyles,style)
+			end	
+		end
+		
+		for i,style in pairs(unpublishedStyles) do
+			styles[style] = nil
+			style_map[style] = nil
+		end
+	end
   
 	--build flattened complete style list
 	function self.CompileStyles()
