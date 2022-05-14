@@ -122,7 +122,7 @@ function CS.STYLE()
 	[124] = {2,3097,178505}, -- Silver Rose
 	[125] = {2,3098,178529}, -- Annihilarch's Chosen
 	[126] = {2,3220,178707}, -- Fargrave Guardian
-	[127] = {2,3228,181662}, -- Dreadsails
+	[128] = {2,3228,181662}, -- Dreadsails
 	[129] = {2,3229,181679}, -- Ascendant Order
 	--[130] = {2,0,   182521}, -- Syrabanic Marine
 	[131] = {2,3259,182538}, -- Steadfast Society
