@@ -266,7 +266,7 @@ function CS.STYLE()
 				table.insert(unpublishedStyles,style)
 			end
 			-- non-crown styles must have an known achievement attached
-			if not CS.IsPublishedAchievement(styles[style][2]) then
+			if (not self.IsCrownStyle(style)) and (not CS.IsPublishedAchievement(styles[style][2])) then
 				table.insert(unpublishedStyles,style)
 			end	
 		end
