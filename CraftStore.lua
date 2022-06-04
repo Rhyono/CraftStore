@@ -4327,6 +4327,9 @@ function CS.ControlShow(scene)
   end
   if closed then
     scene:SetHidden(false)
+    if scene:GetType() == CT_TOPLEVELCONTROL then
+      scene:BringWindowToTop()
+    end
   end
 end
 
