@@ -817,7 +817,7 @@ function CS.UpdateStudyLine(control,tracking,craft,line)
     for x = 2, control:GetNumChildren() - 1 do
       local subcontrol = control:GetChild(x)
       -- set individually
-      if trackingTable[x] then
+      if trackingTable[x-1] then
         subcontrol:SetCenterColor(0.06,0.06,0.06,1)
         subcontrol:SetEdgeColor(1,1,1,0.12)
       else
