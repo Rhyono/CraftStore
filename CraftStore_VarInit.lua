@@ -276,6 +276,12 @@ CS.Mount = {
 	['stamina'] = 'esoui/art/mounts/ridingskill_stamina.dds',
 }
 
+-- Script for printing the latest wayshrines, 494 is one of the last Deadlands wayshrine nodes
+--for i=494, GetNumFastTravelNodes() do
+--  _, name = GetFastTravelNodeInfo(i)
+--  d(i, name)
+--end
+
 CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Daggerfall , Aldmeri, Ebonheart }
   {traits=2,nodes={  7,175, 77}, item={ 43873, 49584, 49575, 49580}, zone={  2,178,  9}},  -- Ashen Grip
   {traits=2,nodes={  1,177, 71}, item={ 46507, 46519, 43805, 46516}, zone={  2,178,  9}},  -- Death's Wind
@@ -298,6 +304,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=3,nodes={447,447,447}, item={168012,168027,168019,168024}, zone={783,783,783}},  -- Markarth:Red Eagle's Fury
   {traits=3,nodes={464,464,464}, item={172468,172483,172475,172480}, zone={834,834,834}},  -- Blackwood:Hist Whisperer	
   {traits=3,nodes={478,478,478}, item={178819,178834,178826,178831}, zone={1272,1272,1272}},  -- Deadlands:Wretched Vitality
+  {traits=3,nodes={503,503,503}, item={184784,184799,184791,184796}, zone={883,883,883}},  -- High Isles:Order's Wrath
 
   {traits=4,nodes={  9,154, 51}, item={ 51098, 43998, 51105, 51110}, zone={  5, 18, 19}},  -- Hist Bark
   {traits=4,nodes={ 13,148, 48}, item={ 48805, 48817, 43849, 48813}, zone={  5, 18, 19}},  -- Magnus' Gift
@@ -315,6 +322,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=5,nodes={418,418,418}, item={161234,161249,161241,161246}, zone={743,743,743}},  -- Greymoor:Stuhn's Favor (or 416)
   {traits=5,nodes={461,461,461}, item={173216,173231,173223,173228}, zone={834,834,834}},  -- Blackwood:Diamond's Victory (or 481)	
   {traits=5,nodes={489,489,489}, item={179657,179762,179754,179759}, zone={1283,1283,1283}},  -- Deadlands:Iron Flask
+  {traits=5,nodes={507,507,507}, item={185164,185179,185171,185176}, zone={883,883,883}},  -- High Isles:Serpent's Disdain
 
   {traits=6,nodes={338,338,338}, item={131083,131098,131090,131095}, zone={589,589,589}},  -- CC:Mechanical Acuity
   {traits=6,nodes={ 34,156,118}, item={ 49188, 43861, 49195, 49200}, zone={ 14,179, 16}},  -- Night Mother's Gaze
@@ -333,6 +341,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=7,nodes={417,417,417}, item={161608,161623,161620,161615}, zone={743,743,743}},  -- Greymoor:Dragon's Appetite (or 429)
   {traits=7,nodes={483,483,483}, item={172842,172857,172849,172854}, zone={834,834,834}},  -- Blackwood:Heartland Conqueror's
   {traits=7,nodes={494,494,494}, item={179193,179208,179200,179205}, zone={1272,1272,1272}},  -- Deadlands:Deadlands Demolisher
+  {traits=7,nodes={511,511,511}, item={185544,185559,185551,185556}, zone={883,883,883}},  -- High Isles:Druid's Braid
 
   {traits=8,nodes={386,386,386}, item={147961,147976,147968,147973}, zone={681,681,681}},  -- Elsweyr:Coldharbour's Favorite
   {traits=8,nodes={329,329,329}, item={121914,121929,121921,121926}, zone={467,467,467}},  -- Daedric Trickery  
