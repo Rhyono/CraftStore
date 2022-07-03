@@ -1282,22 +1282,22 @@ function CS.UpdateInventory()
   }
   for x = 1,#inv do
     local puffer = inv[x].dataTypes[1].setupCallback
-    inv[x].dataTypes[1].setupCallback = function(control,slot)
-      puffer(control,slot)
+    inv[x].dataTypes[1].setupCallback = function(control,slot,...)
+      puffer(control,slot,...)
       CS.SetItemMark(control,1)
     end
   end
     local puffer1 = ZO_LootAlphaContainerList.dataTypes[1].setupCallback
-    ZO_LootAlphaContainerList.dataTypes[1].setupCallback = function(control,slot)
-    puffer1(control,slot)
+    ZO_LootAlphaContainerList.dataTypes[1].setupCallback = function(control,slot,...)
+    puffer1(control,slot,...)
     CS.SetItemMark(control,2)
   end
 end
 function CS.UpdateGuildStore()
   if not IsInGamepadPreferredMode() then
     local puffer = TRADING_HOUSE.searchResultsList.dataTypes[1].setupCallback
-    TRADING_HOUSE.searchResultsList.dataTypes[1].setupCallback = function(control,slot)
-      puffer(control,slot)
+    TRADING_HOUSE.searchResultsList.dataTypes[1].setupCallback = function(control,slot,...)
+      puffer(control,slot,...)
       CS.SetItemMark(control,3)
     end
   end
