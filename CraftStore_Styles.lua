@@ -124,10 +124,12 @@ function CS.STYLE()
 	[126] = {2,3220,178707}, -- Fargrave Guardian
 	[128] = {2,3228,181662}, -- Dreadsails
 	[129] = {2,3229,181679}, -- Ascendant Order
-	--[130] = {2,0,   182521}, -- Syrabanic Marine
+	[130] = {2,3258,182521}, -- Syrabanic Marine
 	[131] = {2,3259,182538}, -- Steadfast Society
-	--[132] = {2,0,   182555}, -- Systres Guardian
+	[132] = {2,3260,182555}, -- Systres Guardian
 	--[134] = {2,?,X}, -- Ascendant Knight
+	--[135] = {2,?,187729}, -- Y'ffre's Will
+	--[136] = {2,?,187763}, -- Drowned Mariner
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -244,10 +246,12 @@ function CS.STYLE()
 	[126] = {178706, 178707, 178721, 0}, -- Fargrave Guardian
 	[128] = {181661, 181662, 181676, 0}, -- Dreadsails
 	[129] = {181678, 181679, 181693, 0}, -- Ascendant Order
-	--[130] = {182520, 182521, 182535, 0}, -- Syrabanic Marine
+	[130] = {182520, 182521, 182535, 0}, -- Syrabanic Marine
 	[131] = {182537, 182538, 182552, 0}, -- Steadfast Society
-	--[132] = {182554, 182555, 182569, 0}, -- Systres Guardian
+	[132] = {182554, 182555, 182569, 0}, -- Systres Guardian
 	--[134] = {X-1, X, X+15, 0}, -- Ascendant Knight
+	--[135] = {187728, 187729, 187743, 0}, -- Y'ffre's Will
+	--[136] = {187762, 187763, 187777, 0}, -- Drowned Mariner
 	}
   
 	--build visual motif number list
