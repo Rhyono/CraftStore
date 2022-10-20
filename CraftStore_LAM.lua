@@ -319,14 +319,22 @@ CS.OptionsTable = {
 		getFunc     = function() return CS.Account.options.displayknown end, 
 		setFunc     = function(value) CS.SettingsUpdate('displayknown',value) end, 
 		default     = CS.AccountInit.options.displayknown, 
-	},	
+	},
+	[34] = {
+	    type        = "checkbox", 
+		name        = CS.Loc.options.displaycount,
+		tooltip     = "",
+		getFunc     = function() return CS.Account.options.displaycount end, 
+		setFunc     = function(value) CS.SettingsUpdate('displaycount',value) end, 
+		default     = CS.AccountInit.options.displaycount, 
+	},
 	--Misc options
-    [34] = {
+    [35] = {
         type 		= "header",
         name 		= "Misc Settings",
         width 		= "full",
     },
-	[35] = {
+	[36] = {
 	    type        = "checkbox", 
 		name        = CS.Loc.options.playrunevoice,
 		tooltip     = "",
@@ -334,7 +342,7 @@ CS.OptionsTable = {
 		setFunc     = function(value) CS.SettingsUpdate('playrunevoice',value) end, 
 		default     = CS.AccountInit.options.playrunevoice, 
 	},	
-	[36] = {
+	[37] = {
 	    type        = "checkbox", 
 		name        = CS.Loc.options.advancedcolorgrid,
 		tooltip     = "",
@@ -345,7 +353,7 @@ CS.OptionsTable = {
 					  end, 
 		default     = CS.AccountInit.options.advancedcolorgrid, 
 	},
-	[37] = {
+	[38] = {
 	    type        = "checkbox", 
 		name        = CS.Loc.options.lockprotection,
 		tooltip     = "",
@@ -353,7 +361,7 @@ CS.OptionsTable = {
 		setFunc     = function(value) CS.SettingsUpdate('lockprotection',value) end, 
 		default     = CS.AccountInit.options.lockprotection, 
 	},	
-	[38] = {
+	[39] = {
 	    type        = "dropdown", 
 		name        = CS.Loc.options.sortsets,
 		tooltip     = "",
@@ -362,7 +370,7 @@ CS.OptionsTable = {
 		setFunc     = function(value) CS.DropdownSettingsUpdate('sortsets',value) end, 
 		default     = CS.SettingFromIndex('sortsets',CS.AccountInit.options.sortsets),
 	},
-	[39] = {
+	[40] = {
 	    type        = "dropdown", 
 		name        = CS.Loc.options.sortstyles,
 		tooltip     = "",
@@ -374,7 +382,7 @@ CS.OptionsTable = {
 					  end, 
 		default     = CS.SettingFromIndex('sortstyles',CS.AccountInit.options.sortstyles),
 	},
-	[40] = {
+	[41] = {
 	    type        = "editbox", 
 		name        = CS.Loc.options.bulkcraftlimit,
 		tooltip     = "",

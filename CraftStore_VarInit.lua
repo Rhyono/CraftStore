@@ -422,6 +422,7 @@ CS.AccountInit = {
 	userunerecipe = true,
 	displayknown = true,
 	displayunknown = true,
+	displaycount = true,
   }
 }
 
