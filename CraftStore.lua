@@ -1392,7 +1392,7 @@ function CS.UpdateStored(action,data,replace)
     -- safety check due to Dragonhold quests
     if CS.NilCheck(CS.Account.crafting.stored,{},craft,line,trait) == {} then
       return true
-    elseif not CS.Account.crafting.stored[craft][line][trait].link then
+    elseif CS.Account.crafting.stored[craft][line][trait] == nil or not CS.Account.crafting.stored[craft][line][trait].link then
       return true
     else
       local q2 = GetItemLinkQuality(CS.Account.crafting.stored[craft][line][trait].link)
@@ -3064,9 +3064,11 @@ function CS.GetTrait(link)
   local at,wt,line=GetItemLinkArmorType(link),GetItemLinkWeaponType(link),nil
   if trait==ITEM_TRAIT_TYPE_ARMOR_NIRNHONED then
     trait=19
+    if at == ARMORTYPE_NONE then trait = 9 end
   end -- Nirnhoned Weapon replacement
   if trait==ITEM_TRAIT_TYPE_WEAPON_NIRNHONED then
     trait=9
+    if wt == WEAPONTYPE_NONE then trait = 19 end
   end -- Nirnhoned Armor replacement
   if wt==WEAPONTYPE_AXE then
     craft=1;line=1;
