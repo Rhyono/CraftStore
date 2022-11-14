@@ -638,15 +638,15 @@ local function NeedAppend(need,unneed,researching)
   end
   if #need ~= 0 then
     table.sort(need,sorter)
-    need = '|t20:20:esoui/art/buttons/decline_up.dds|t ' .. table.concat(need,', ')
+    need = '|t20:20:esoui/art/buttons/decline_up.dds|t ' .. (CS.Account.options.displaycount and string.format("(%d) ", #need) or '') .. table.concat(need,', ')
   else need = '' end
   if #unneed ~= 0 then
     table.sort(unneed,sorter)
-    unneed = '|t20:20:esoui/art/buttons/accept_up.dds|t ' .. table.concat(unneed,', ')
+    unneed = '|t20:20:esoui/art/buttons/accept_up.dds|t ' .. (CS.Account.options.displaycount and string.format("(%d) ", #unneed) or '') .. table.concat(unneed,', ')
   else unneed = '' end
   if #researching ~= 0 then
     table.sort(researching,sorter)
-    researching = '|t23:23:esoui/art/miscellaneous/timer_32.dds|t  ' .. table.concat(researching,', ')
+    researching = '|t23:23:esoui/art/miscellaneous/timer_32.dds|t  ' .. (CS.Account.options.displaycount and string.format("(%d) ", #researching) or '') .. table.concat(researching,', ')
   else researching = '' end
   return need, unneed, researching
 end

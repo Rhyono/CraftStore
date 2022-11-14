@@ -38,7 +38,8 @@ de = {
 		useruneextraction = 'CraftStoreRune Extraktion benutzen',
 		userunerecipe = 'CraftStoreRune Möbel benutzen',
 		displayunknown = 'Anzeigen unbekannt in Tooltips',
-		displayknown = 'Anzeigen bekannt in Tooltips',	
+		displayknown = 'Anzeigen bekannt in Tooltips',
+		displaycount = 'Anzeigen bekannt/unbekannt anzahl in Tooltips',
 	},
 	suboptions = {
 		sortstyles = {
@@ -167,6 +168,7 @@ en = {
 		userunerecipe = 'Use CraftStoreRune Furniture',
 		displayunknown = 'Display unknown in tooltips',
 		displayknown = 'Display known in tooltips',
+		displaycount = 'Display known/unknown counts in tooltips',
 	},
 	suboptions = {
 		sortstyles = {
@@ -295,7 +297,8 @@ fr = {
 		useruneextraction = 'Utiliser CraftStoreRune Extraction',
 		userunerecipe = 'Utiliser CraftStoreRune Meubles',
 		displayunknown = 'Afficher l\'inconnu dans le tooltips',
-		displayknown = 'Afficher connu dans le tooltips',		
+		displayknown = 'Afficher connu dans le tooltips',
+		displaycount = 'Afficher les nombres connus/inconnus dans le tooltips',
 	},
 	suboptions = {
 		sortstyles = {
@@ -423,7 +426,8 @@ br = {
 		useruneextraction = 'Usa CraftStoreRune Extração',
 		userunerecipe = 'Usa CraftStoreRune Mobília',	
 		displayunknown = 'Mostrar desconhecido nas dicas',
-		displayknown = 'Mostrar conhecido nas dicas',		
+		displayknown = 'Mostrar conhecido nas dicas',
+		displaycount = 'Mostrar contagens conhecidas/desconhecidas em dicas',
 	},
 	suboptions = {
 		sortstyles = {
@@ -552,7 +556,8 @@ ru = {
 		useruneextraction = 'Использовать CraftStoreRune экстракция',
 		userunerecipe = 'Использовать CraftStoreRune Мебель',
 		displayunknown = 'Показать неизвестно подсказке',
-		displayknown = 'Показать известный подсказке',			
+		displayknown = 'Показать известный подсказке',
+		displaycount = 'Показать известно/неизвестно счетчика подсказке',
 	},
 	suboptions = {
 		sortstyles = {
@@ -681,6 +686,7 @@ it = {
 		userunerecipe = 'Usa CraftStoreRune per Mobili',
 		displayunknown = 'Mostra non conosciuti nei suggerimenti',
 		displayknown = 'Mostra conosciuti nei suggerimenti',
+		displaycount = 'Mostra conteggi conosciuti e non conosciuti nei suggerimenti',
 	},
 	suboptions = {
 		sortstyles = {
@@ -810,6 +816,7 @@ es = {
 		userunerecipe = 'Usar CraftStoreRune Furniture',
 		displayunknown = 'Mostrar desconocidos en información',
 		displayknown = 'Mostrar conocidos en información',
+		displaycount = 'Mostrar recuentos conocidos/desconocidos en información',
 	},
 	suboptions = {
 		sortstyles = {
