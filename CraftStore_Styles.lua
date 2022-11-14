@@ -128,8 +128,10 @@ function CS.STYLE()
 	[131] = {2,3259,182538}, -- Steadfast Society
 	[132] = {2,3260,182555}, -- Systres Guardian
 	--[134] = {2,?,X}, -- Ascendant Knight
-	--[135] = {2,?,187729}, -- Y'ffre's Will
-	--[136] = {2,?,187763}, -- Drowned Mariner
+	[135] = {2,3422,187729}, -- Y'ffre's Will
+	[136] = {2,3423,187763}, -- Drowned Mariner
+	--[138] = {2,?,188308}, -- Firesong
+	--[139] = {2,?,188325}, -- House Monard
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -250,8 +252,10 @@ function CS.STYLE()
 	[131] = {182537, 182538, 182552, 0}, -- Steadfast Society
 	[132] = {182554, 182555, 182569, 0}, -- Systres Guardian
 	--[134] = {X-1, X, X+15, 0}, -- Ascendant Knight
-	--[135] = {187728, 187729, 187743, 0}, -- Y'ffre's Will
-	--[136] = {187762, 187763, 187777, 0}, -- Drowned Mariner
+	[135] = {187728, 187729, 187743, 0}, -- Y'ffre's Will
+	[136] = {187762, 187763, 187777, 0}, -- Drowned Mariner
+	--[138] = {188307, 188308, 188322, 0}, -- Firesong
+	--[139] = {188324, 188325, 188339, 0}, -- House Mornard
 	}
   
 	--build visual motif number list
