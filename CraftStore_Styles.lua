@@ -130,8 +130,10 @@ function CS.STYLE()
 	--[134] = {2,?,X}, -- Ascendant Knight
 	[135] = {2,3422,187729}, -- Y'ffre's Will
 	[136] = {2,3423,187763}, -- Drowned Mariner
-	--[138] = {2,?,188308}, -- Firesong
-	--[139] = {2,?,188325}, -- House Monard
+	[138] = {2,3464,188308}, -- Firesong
+	[139] = {2,3465,188325}, -- House Monard
+	[140] = {2,0,190890}, -- Firesong
+	[141] = {2,0,190907}, -- House Monard
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -254,8 +256,10 @@ function CS.STYLE()
 	--[134] = {X-1, X, X+15, 0}, -- Ascendant Knight
 	[135] = {187728, 187729, 187743, 0}, -- Y'ffre's Will
 	[136] = {187762, 187763, 187777, 0}, -- Drowned Mariner
-	--[138] = {188307, 188308, 188322, 0}, -- Firesong
-	--[139] = {188324, 188325, 188339, 0}, -- House Mornard
+	[138] = {188307, 188308, 188322, 0}, -- Firesong
+	[139] = {188324, 188325, 188339, 0}, -- House Mornard
+	[140] = {190889, 190890, 190904, 0}, -- Scribes Of Mora
+	[141] = {190906, 190907, 190921, 0}, -- Necropolis Steward
 	}
   
 	--build visual motif number list
