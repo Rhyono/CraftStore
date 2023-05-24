@@ -5,12 +5,12 @@
 ; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
 
 ## Title: CraftStore
-## APIVersion: 101037 101036
-## Version: 2.85
+## APIVersion: 101038 101037
+## Version: 2.86
 ## SavedVariables: CraftStore_Account CraftStore_Character
 ## Author: AlphaLemming, BlackSwan, Rhyono
 ## Description: A tool for crafting research, with style and recipe tracking and new crafting interfaces. 
-## OptionalDependsOn: FurniturePreview ItemSaver FCOItemSaver MasterMerchant TamrielTradeCentre LibChatMessage
+## OptionalDependsOn: ItemSaver FCOItemSaver MasterMerchant TamrielTradeCentre LibChatMessage
 ## DependsOn: LibBinaryEncode>=34 LibAddonMenu-2.0>=32
 
 CraftStore_Helpers.lua
