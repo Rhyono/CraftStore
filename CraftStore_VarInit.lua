@@ -311,6 +311,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=3,nodes={478,478,478}, item={178819,178834,178826,178831}, zone={1272,1272,1272}},  -- Deadlands:Wretched Vitality
   {traits=3,nodes={503,503,503}, item={184784,184799,184791,184796}, zone={883,883,883}},  -- High Isles:Order's Wrath
   {traits=3,nodes={530,530,530}, item={191625,191640,191632,191637}, zone={1383,1383,1383}},  -- Firesong:Old Growth Brewer
+  {traits=3,nodes={535,535,535}, item={194955,194970,194962,194967}, zone={1414,1414,1414}},  -- Necrom:Telvanni Efficiency
 
   {traits=4,nodes={  9,154, 51}, item={ 51098, 43998, 51105, 51110}, zone={  5, 18, 19}},  -- Hist Bark
   {traits=4,nodes={ 13,148, 48}, item={ 48805, 48817, 43849, 48813}, zone={  5, 18, 19}},  -- Magnus' Gift
@@ -330,6 +331,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=5,nodes={489,489,489}, item={179657,179762,179754,179759}, zone={1283,1283,1283}},  -- Deadlands:Iron Flask
   {traits=5,nodes={507,507,507}, item={185164,185179,185171,185176}, zone={883,883,883}},  -- High Isles:Serpent's Disdain
   {traits=5,nodes={527,527,527}, item={192005,192020,192012,192017}, zone={1383,1383,1383}},  -- Firesong:Claw of the Forest Wraith
+  {traits=5,nodes={542,542,542}, item={194630,194645,194637,194642}, zone={1413,1413,1413}},  -- Necrom:Shattered Fate
 
   {traits=6,nodes={338,338,338}, item={131083,131098,131090,131095}, zone={589,589,589}},  -- CC:Mechanical Acuity
   {traits=6,nodes={ 34,156,118}, item={ 49188, 43861, 49195, 49200}, zone={ 14,179, 16}},  -- Night Mother's Gaze
@@ -350,6 +352,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=7,nodes={494,494,494}, item={179193,179208,179200,179205}, zone={1272,1272,1272}},  -- Deadlands:Deadlands Demolisher
   {traits=7,nodes={511,511,511}, item={185544,185559,185551,185556}, zone={883,883,883}},  -- High Isles:Druid's Braid
   {traits=7,nodes={528,528,528}, item={191245,191260,191152,191157}, zone={1383,1383,1383}},  -- Firesong:Chimera's Rebuke
+  {traits=7,nodes={546,546,546}, item={195390,195405,195397,195402}, zone={1413,1413,1413}},  -- Necrom:Seeker Synthesis
 
   {traits=8,nodes={386,386,386}, item={147961,147976,147968,147973}, zone={681,681,681}},  -- Elsweyr:Coldharbour's Favorite
   {traits=8,nodes={329,329,329}, item={121914,121929,121921,121926}, zone={467,467,467}},  -- Daedric Trickery  
