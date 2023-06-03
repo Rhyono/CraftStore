@@ -1620,20 +1620,6 @@ function CS.CookStart(control, button, isEnchanting)
     end
     CS.CookShowRecipe(control,control.data.list,control.data.id,0,sound,tradeType==CRAFTING_TYPE_ENCHANTING)
     return
-  elseif button == 2 then
-    --Attempt to show preview on right click
-    local itemType = GetItemLinkItemType(control.data.link)
-    if itemType == ITEMTYPE_FURNISHING and FurPreview then
-      if FurPreview:CanPreviewItem(nil,control.data.link) then
-        FurPreview:Preview(nil,control.data.link)
-      else
-        CS.Chat:Print(CS.Loc.noFurnitureData)
-      end
-      notpreview = false
-    elseif itemType == ITEMTYPE_FURNISHING and not FurPreview then
-      CS.Chat:Print(CS.Loc.noItemPreview)
-      notpreview = false
-    end
   end
   if notpreview and control.data.craftable then
     if GetNumBagFreeSlots(BAG_BACKPACK) > 0 then
@@ -4041,7 +4027,7 @@ function CS.Tooltip(c,visible,scale,parent,pos)
       --Check if furniture
       local itemType = GetItemLinkItemType(c.data.link)
       if itemType == ITEMTYPE_FURNISHING then
-        return {ZOSF(CS.Loc.TT[2],amount),CS.Loc.TT[27],CS.Loc.TT[4]}
+        return {ZOSF(CS.Loc.TT[2],amount),CS.Loc.TT[4]}
       else
         return {ZOSF(CS.Loc.TT[2],amount),ZOSF(CS.Loc.TT[3],maxval),CS.Loc.TT[4]}
       end
@@ -4389,6 +4375,7 @@ function CS.GetBlueprintChild(id)
     btn:SetDimensions(508,22)
     btn:SetFont('CraftStoreFixedFont')
     btn:SetHidden(true)
+    btn:EnableMouseButton(1,false)
     btn:EnableMouseButton(2,true)
     btn:EnableMouseButton(3,true)
     btn:SetClickSound('Click')
@@ -4406,16 +4393,7 @@ end
 
 function CS.BlueprintMark(control,button)
   local mark
-  if button == 1 and FurPreview then
-    if FurPreview:CanPreviewItem(nil,control.data.link) then
-      CS.ControlCloseAll(true)
-      FurPreview:Preview(nil,control.data.link)
-    else
-      CS.Chat:Print(CS.Loc.noFurnitureData)
-    end
-  elseif button == 1 and not FurPreview then
-    CS.Chat:Print(CS.Loc.noItemPreview)
-  elseif button == 2 then
+  if button == 2 then
     CS.ToChat(control.data.link)
   else
     local tracked = CS.Account.furnisher.ingredients[control.data.id] or false
@@ -4446,7 +4424,7 @@ function CS.BlueprintShow(id,inc)
   control:SetNormalFontColor(color[1],color[2],color[3],color[4])
   control:SetText(mark..'('..CS.Furnisher.recipe[id].level..') '..CS.Furnisher.recipe[id].name)
   control:SetHidden(false)
-  control.data = {link = CS.Furnisher.recipe[id].link, rec = id, id = CS.Furnisher.recipe[id].id, buttons = {CS.Loc.TT[26],CS.Loc.TT[6],CS.Loc.TT[7]}}
+  control.data = {link = CS.Furnisher.recipe[id].link, rec = id, id = CS.Furnisher.recipe[id].id, buttons = {CS.Loc.TT[6],CS.Loc.TT[7]}}
   return inc + 1
 end
 function CS.BlueprintShowCategory(list)
