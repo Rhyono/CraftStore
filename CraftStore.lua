@@ -110,7 +110,7 @@ function CS.DrawCharacters()
     end
   end
   end
-  for x = 1,18 do
+  for x = 1, 20 do
     control = WM:GetControlByName('CraftStoreFixed_CharacterFrame'..x);
     if control then
       control:SetHidden(true)
@@ -128,6 +128,12 @@ function CS.DrawCharacters()
   -- fallback race
   if CS.Races[player.race] == nil then
     player.race = 1
+  end
+  if CS.Classes[player.class] == nil then
+    if CS.Debug then
+      d('Unknown player class id: '..player.class)
+    end
+    player.class = 1
   end
   control:SetText(tex[mainchar]..char..(player.level ~= 0 and (' ('.. player.level..') ') or '')..'|t25:25:'..CS.Flags[player.faction]..'|t|t30:30:'..CS.Classes[player.class]..'|t|t25:25:'..CS.Races[player.race]..'|t')
   control.data = { charactername = char, info = CS.Loc.TT[10] }

@@ -254,12 +254,13 @@ CS.Flags = {
   'esoui/art/guild/guildbanner_icon_daggerfall.dds', -- DC
 }
 CS.Classes = {
-  'esoui/art/icons/class/class_dragonknight.dds', -- Dragon Knight
-  'esoui/art/icons/class/class_sorcerer.dds',     -- Sorcerer
-  'esoui/art/icons/class/class_nightblade.dds',   -- NightBlade
-  'esoui/art/icons/class/class_warden.dds',       -- Warden
-  'esoui/art/icons/class/class_necromancer.dds',  -- Necromancer
-  'esoui/art/icons/class/class_templar.dds'       -- Templar
+  [1] = 'esoui/art/icons/class/class_dragonknight.dds', -- Dragon Knight
+  [2] = 'esoui/art/icons/class/class_sorcerer.dds',     -- Sorcerer
+  [3] = 'esoui/art/icons/class/class_nightblade.dds',   -- NightBlade
+  [4] = 'esoui/art/icons/class/class_warden.dds',       -- Warden
+  [5] = 'esoui/art/icons/class/class_necromancer.dds',  -- Necromancer
+  [6] = 'esoui/art/icons/class/class_templar.dds',      -- Templar
+  [117] = 'esoui/art/icons/class/class_arcanist.dds',   -- Arcanist
 }
 CS.Races = {
 	'esoui/art/charactercreate/charactercreate_bretonicon_down.dds', -- Breton
