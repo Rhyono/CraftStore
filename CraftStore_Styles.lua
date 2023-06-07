@@ -272,7 +272,7 @@ function CS.STYLE()
 	for style,data in pairs(styles) do
 		local styleName = GetItemLinkName(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(styles[style][3]))
 		local styleVisualId = styleName:match("%d+")
-		styles[style][4] = styleVisualId ~= nil and styleVisualId or 0 
+		styles[style][4] = styleVisualId ~= nil and tonumber(styleVisualId) or 0 
 	end
 	
 	-- remove unpublished styles to avoid hickups
