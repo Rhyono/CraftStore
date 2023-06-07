@@ -132,8 +132,11 @@ function CS.STYLE()
 	[136] = {2,3423,187763}, -- Drowned Mariner
 	[138] = {2,3464,188308}, -- Firesong
 	[139] = {2,3465,188325}, -- House Monard
-	[140] = {2,0,190890}, -- Firesong
-	[141] = {2,0,190907}, -- House Monard
+	[140] = {2,3546,190890}, -- Scribes Of Mora
+	[141] = {2,3547,190907}, -- Blessed Inheritor
+	--[142] = {2,?,X}, -- Clan Dreamcarver
+	[143] = {2,3668,194514}, -- Dead Keeper
+	--[144] = {2,?,X}, -- Kindred's Concord
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -187,7 +190,7 @@ function CS.STYLE()
 	[52] = {121316, 121317, 121331, 0}, -- Buoyant Armiger
     [53] = {0     , 0     , 96954 , 0}, -- Frostcaster
 	[54] = {124679, 124680, 124694, 0}, -- Ashlander
-	[55] = {134739, 134740, 134754, 0}, -- Worm Cult
+	[55] = {134739, 134740, 134754, 0}, -- Worm Cult, ZOS added motif pages 184857 ff as duplicates
 	[56] = {114967, 114968, 114982, 0}, --Silken Ring
 	[57] = {114951, 114952, 114966, 0}, --Mazzatun
 	[58] = {82038 , 82039 , 82053 , 0}, -- Grim Harlequin
@@ -259,7 +262,10 @@ function CS.STYLE()
 	[138] = {188307, 188308, 188322, 0}, -- Firesong
 	[139] = {188324, 188325, 188339, 0}, -- House Mornard
 	[140] = {190889, 190890, 190904, 0}, -- Scribes Of Mora
-	[141] = {190906, 190907, 190921, 0}, -- Necropolis Steward
+	[141] = {190906, 190907, 190921, 0}, -- Blessed Inheritor
+	--[142] = {X-1, X, X+15, 0}, -- Clan Dreamcarver
+	[143] = {194513, 194514, 194528, 0}, -- Dead Keeper
+	--[144] = {X-1, X, X+15, 0}, -- Kindred's Concord
 	}
   
 	--build visual motif number list

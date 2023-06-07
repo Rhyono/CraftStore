@@ -4,7 +4,7 @@ CS.Debug = (GetWorldName() == "PTS" or GetDisplayName()=="@VladislavAksjonov")
 CS.Name = 'CraftStoreFixedAndImproved'
 CS.Title = 'CraftStore'
 CS.Author = 'AlphaLemming, BlackSwan, Rhyono'
-CS.Version = '2.85'
+CS.Version = '2.86'
 CS.Account = nil
 CS.Character = nil
 CS.Init = false
@@ -93,6 +93,7 @@ CS.Furnisher = {
 190074,190075,190076,190077,190078,190079,190080,190081,190082,190083,190084,190085,190086,190087,190088,190089,190090,190091,190092,190093,190094,190095,190096,190097,190098,190099,190100,190101,
 192514,192515,192516,192517,192518,192519,192520,192521,192522,192523,192524,192525,192526,192527,192528,192529,192530,192531,192532,192533,192534,192535,192536,192537,192538,192539,192540,192541,192542,192543,192544,192545,192546,192547,192548,192549,192550,192551,192552,192553,192554,192555,192556,192557,192558,192559,192560,192561,192562,192563, -- Firesong
 194365,194366,194367,194368,194369,194370,194371,194372,194373,194374,194375,194376,194377,194378,194379,194380,194381,194382,194383,194384,194385,194386,194387,194388,194389,194390,194391,194392,194393,194394,194395,194396,194397,194398, -- Scribes of Fate
+197549,197550,197551,197552,197553,197554,197555,197556,197557,197558,197559,197560,197561,197562,197563,197564,197565,197566,197567,197568,197569,197570,197571,197572,197573,197574,197575,197576,197577,197578,197579,197580,197581,197582,197583,197584,197585,197586,197587,197588,197589,197590,197591,197592,197593,197594,197595,197596,197597,197598,197599,197600,197601,197602,197603,197604,197605,197606,197607,197608,197609,197610,197611,197612,197613,197614,197615,197616,197629,197630,197631,197756,197757,197758,197759,197760,197761,197762,197763,197764,197765,197766,197767,197768,197769,197770,197771,197772,197773,197774,197775,197784,197785,197786,197787,197788,197849,197850,197851 -- Necrom
 
   }
 }
@@ -253,12 +254,13 @@ CS.Flags = {
   'esoui/art/guild/guildbanner_icon_daggerfall.dds', -- DC
 }
 CS.Classes = {
-  'esoui/art/icons/class/class_dragonknight.dds', -- Dragon Knight
-  'esoui/art/icons/class/class_sorcerer.dds',     -- Sorcerer
-  'esoui/art/icons/class/class_nightblade.dds',   -- NightBlade
-  'esoui/art/icons/class/class_warden.dds',       -- Warden
-  'esoui/art/icons/class/class_necromancer.dds',  -- Necromancer
-  'esoui/art/icons/class/class_templar.dds'       -- Templar
+  [1] = 'esoui/art/icons/class/class_dragonknight.dds', -- Dragon Knight
+  [2] = 'esoui/art/icons/class/class_sorcerer.dds',     -- Sorcerer
+  [3] = 'esoui/art/icons/class/class_nightblade.dds',   -- NightBlade
+  [4] = 'esoui/art/icons/class/class_warden.dds',       -- Warden
+  [5] = 'esoui/art/icons/class/class_necromancer.dds',  -- Necromancer
+  [6] = 'esoui/art/icons/class/class_templar.dds',      -- Templar
+  [117] = 'esoui/art/icons/class/class_arcanist.dds',   -- Arcanist
 }
 CS.Races = {
 	'esoui/art/charactercreate/charactercreate_bretonicon_down.dds', -- Breton
@@ -310,6 +312,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=3,nodes={478,478,478}, item={178819,178834,178826,178831}, zone={1272,1272,1272}},  -- Deadlands:Wretched Vitality
   {traits=3,nodes={503,503,503}, item={184784,184799,184791,184796}, zone={883,883,883}},  -- High Isles:Order's Wrath
   {traits=3,nodes={530,530,530}, item={191625,191640,191632,191637}, zone={1383,1383,1383}},  -- Firesong:Old Growth Brewer
+  {traits=3,nodes={535,535,535}, item={194955,194970,194962,194967}, zone={1414,1414,1414}},  -- Necrom:Telvanni Efficiency
 
   {traits=4,nodes={  9,154, 51}, item={ 51098, 43998, 51105, 51110}, zone={  5, 18, 19}},  -- Hist Bark
   {traits=4,nodes={ 13,148, 48}, item={ 48805, 48817, 43849, 48813}, zone={  5, 18, 19}},  -- Magnus' Gift
@@ -329,6 +332,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=5,nodes={489,489,489}, item={179657,179762,179754,179759}, zone={1283,1283,1283}},  -- Deadlands:Iron Flask
   {traits=5,nodes={507,507,507}, item={185164,185179,185171,185176}, zone={883,883,883}},  -- High Isles:Serpent's Disdain
   {traits=5,nodes={527,527,527}, item={192005,192020,192012,192017}, zone={1383,1383,1383}},  -- Firesong:Claw of the Forest Wraith
+  {traits=5,nodes={542,542,542}, item={194630,194645,194637,194642}, zone={1413,1413,1413}},  -- Necrom:Shattered Fate
 
   {traits=6,nodes={338,338,338}, item={131083,131098,131090,131095}, zone={589,589,589}},  -- CC:Mechanical Acuity
   {traits=6,nodes={ 34,156,118}, item={ 49188, 43861, 49195, 49200}, zone={ 14,179, 16}},  -- Night Mother's Gaze
@@ -349,6 +353,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=7,nodes={494,494,494}, item={179193,179208,179200,179205}, zone={1272,1272,1272}},  -- Deadlands:Deadlands Demolisher
   {traits=7,nodes={511,511,511}, item={185544,185559,185551,185556}, zone={883,883,883}},  -- High Isles:Druid's Braid
   {traits=7,nodes={528,528,528}, item={191245,191260,191152,191157}, zone={1383,1383,1383}},  -- Firesong:Chimera's Rebuke
+  {traits=7,nodes={546,546,546}, item={195390,195405,195397,195402}, zone={1413,1413,1413}},  -- Necrom:Seeker Synthesis
 
   {traits=8,nodes={386,386,386}, item={147961,147976,147968,147973}, zone={681,681,681}},  -- Elsweyr:Coldharbour's Favorite
   {traits=8,nodes={329,329,329}, item={121914,121929,121921,121926}, zone={467,467,467}},  -- Daedric Trickery  
