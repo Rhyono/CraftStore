@@ -1,4 +1,4 @@
-﻿CS = CraftStoreFixedAndImprovedLongClassName
+CS = CraftStoreFixedAndImprovedLongClassName
 
 CS.Debug = (GetWorldName() == "PTS" or GetDisplayName()=="@VladislavAksjonov")
 CS.Name = 'CraftStoreFixedAndImproved'
