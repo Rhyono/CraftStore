@@ -21,15 +21,15 @@
               <Dimensions x="580" y="40"/>
               <Edge edgeSize="1"/>
             </Backdrop>
-            <Button name="$(parent)HideKnownButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+            <Button name="$(parent)HideKnownButton" clickSound="Click" horizontalAlignment="RIGHT" verticalAlignment="1" font="CraftStoreFixedFont">
               <FontColors normalColor="E8DFAF"/>
-              <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="130" relativeTo="$(parent)TopSection"/>
+              <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="105" relativeTo="$(parent)TopSection"/>
               <Dimensions y="22" x="300"/>
               <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideKnownRecipes()</OnClicked>
             </Button>
-            <Button name="$(parent)HideUnknownButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+            <Button name="$(parent)HideUnknownButton" clickSound="Click" horizontalAlignment="RIGHT" verticalAlignment="1" font="CraftStoreFixedFont">
               <FontColors normalColor="E8DFAF"/>
-              <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="130" relativeTo="$(parent)TopSection"/>
+              <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="105" relativeTo="$(parent)TopSection"/>
               <Dimensions y="22" x="300"/>
               <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideUnknownRecipes()</OnClicked>
             </Button>			
