@@ -94,8 +94,8 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
 end
 
 function CS.OnCraftCompleted(eventCode,craftSkill)
-  local val = GetLastCraftingResultTotalInspiration()
-    if val > 0 then CS.Inspiration = '|t30:30:/esoui/art/currency/currency_inspiration.dds|t |c9095FF'..val..'|r' end
+  local inspirationGained = GetLastCraftingResultTotalInspiration()
+    if inspirationGained > 0 then CS.Inspiration = '|t30:30:/esoui/art/currency/currency_inspiration.dds|t |c9095FF'..inspirationGained..'|r' end
     if CS.Account.options.usecook and craftSkill == CRAFTING_TYPE_PROVISIONING then
       CraftStoreFixed_CookAmount:SetText('')
       zo_callLater(function() CS.CookShowCategory(CS.Character.recipe,false) end,500)

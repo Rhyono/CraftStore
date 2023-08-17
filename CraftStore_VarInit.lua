@@ -1,4 +1,4 @@
-﻿CS = CraftStoreFixedAndImprovedLongClassName
+CS = CraftStoreFixedAndImprovedLongClassName
 
 CS.Debug = (GetWorldName() == "PTS" or GetDisplayName()=="@VladislavAksjonov")
 CS.Name = 'CraftStoreFixedAndImproved'
@@ -423,6 +423,7 @@ CS.AccountInit = {
 	playrunevoice = true,
 	advancedcolorgrid = true,
 	lockprotection = true,
+	inspirationgain = true,
 	sortsets = 1, --alphabetically
 	sortstyles = 1, --alphabetically
 	bulkcraftlimit = 10,
