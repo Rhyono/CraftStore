@@ -320,7 +320,7 @@
               <Anchor point="128"/>
             </Texture>
           </Controls>
-        </Button>	
+        </Button>
         <Button name="$(parent)CategoryButtonFavorites" clickSound="Click">
           <Anchor point="1" relativePoint="4" relativeTo="$(parent)CategoryButton16" offsetY="7"/>
           <Dimensions x="32" y="32"/>
@@ -392,7 +392,25 @@
               <Anchor point="128"/>
             </Texture>
           </Controls>
-        </Button>		
+        </Button>
+        <Button name="$(parent)CategoryButtonFillet" clickSound="Click">
+          <Anchor point="8" relativePoint="2" relativeTo="$(parent)CategoryButtonFurnitureFavorites" offsetX="-3"/>
+          <Dimensions x="32" y="32"/>
+          <OnMouseEnter>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,true,true,self,'bc')</OnMouseEnter>
+          <OnMouseExit>CraftStoreFixedAndImprovedLongClassName.Tooltip(self,false,true)</OnMouseExit>
+          <OnClicked>CraftStoreFixedAndImprovedLongClassName.CookShowVanilla()</OnClicked>
+          <Controls>
+            <Backdrop name="$(parent)BG" centerColor="101010" edgeColor="202020">
+              <Anchor point="128"/>
+              <Dimensions x="34" y="40"/>
+              <Edge edgeSize="1"/>
+            </Backdrop>
+            <Texture name="$(parent)Texture" textureFile="EsoUI/Art/Crafting/provisioner_indexIcon_fillet_up.dds">
+              <Dimensions y="32" x="32"/>
+              <Anchor point="128"/>
+            </Texture>
+          </Controls>
+        </Button>
         <Backdrop name="$(parent)InfoSection" centerColor="101010" edgeColor="202020">
           <Anchor point="3" relativePoint="6" relativeTo="$(parent)CategoryButton1" offsetX="-1" offsetY="3"/>
           <Dimensions x="419" y="40"/>
@@ -437,10 +455,10 @@
         </EditBox>
         <EditBox name="$(parent)Search" font="ZoFontGame" color="E8DFAF" maxInputCharacters="100" inherits="ZO_DefaultEditForBackdrop ZO_EditDefaultText">
           <Anchor point="2" relativePoint="8" relativeTo="$(parent)Amount" offsetX="20"/>
-          <Dimensions x="274" y="24"/>
+          <Dimensions x="236" y="24"/>
           <Controls>
             <Backdrop name="$(parent)BG" centerColor="000000" edgeColor="202020">
-              <Dimensions x="284" y="30"/>
+              <Dimensions x="246" y="30"/>
               <Anchor point="128"/>
               <Edge edgeSize="1"/>
             </Backdrop>
