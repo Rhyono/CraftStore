@@ -1859,6 +1859,7 @@ function CS.CookShowVanilla()
   for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(1) end
   CS.Cook.job = {amount=0}
   for x = 1,CraftStoreFixed_CookFoodSectionScrollChild:GetNumChildren() do CS.HideControl('CraftStoreFixed_CookFoodSectionScrollChildButton'..x) end
+  ZO_KeybindStripControl:SetHidden(false)
 end
 
 function CS.CookShow()
