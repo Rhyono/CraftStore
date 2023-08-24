@@ -1888,10 +1888,13 @@ end
 
 
 function CS.CookShowVanilla()
-  CraftStoreFixed_Cook:SetHidden(true)
+  -- CS Cook can remain open in gamepad mode as both remain side by side
+  if not IsInGamepadPreferredMode() then
+    CraftStoreFixed_Cook:SetHidden(true)
+    CS.Cook.job = {amount=0}
+    for x = 1,CraftStoreFixed_CookFoodSectionScrollChild:GetNumChildren() do CS.HideControl('CraftStoreFixed_CookFoodSectionScrollChildButton'..x) end
+  end
   for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(1) end
-  CS.Cook.job = {amount=0}
-  for x = 1,CraftStoreFixed_CookFoodSectionScrollChild:GetNumChildren() do CS.HideControl('CraftStoreFixed_CookFoodSectionScrollChildButton'..x) end
   ZO_KeybindStripControl:SetHidden(false)
 end
 
@@ -1899,8 +1902,11 @@ function CS.CookShow()
   CraftStoreFixed_CookAmount:SetText('')
   CraftStoreFixed_CookSearch:SetText(GetString(SI_GAMEPAD_HELP_SEARCH)..'...')
   CraftStoreFixed_Cook:SetHidden(false)
-  for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(0) end
-  ZO_KeybindStripControl:SetHidden(not IsInGamepadPreferredMode())
+  -- Vanilla UI remains active alongside CS Cook in gamepad mode
+  if not IsInGamepadPreferredMode() then
+    for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(0) end
+    ZO_KeybindStripControl:SetHidden(true)
+  end
 end
 
 function CS.RuneCreate(control,button)

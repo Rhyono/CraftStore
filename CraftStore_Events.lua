@@ -47,7 +47,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
 	  --Update space
 	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)	  
     
-    if not CS.Cook.hooksInitialized then
+    if not CS.Cook.hooksInitialized and not IsInGamepadPreferredMode() then
       ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton2,'OnMouseDown', CS.CookFoodTabShow)
       ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton3,'OnMouseDown', CS.CookDrinkTabShow)
       ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton4,'OnMouseDown', CS.CookFurnitureTabShow)
