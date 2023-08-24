@@ -1069,6 +1069,36 @@ function CS.UpdateRecipeKnowledge()
       end
     end
     local fm,fs,fh = statcheck(CS.MagickaName), statcheck(CS.StaminaName), statcheck(CS.HealthName)
+
+    -- Check for alternative resource names in the description
+    -- Some languages may have different spellings of the resource between the description and
+    -- when only mentioning the resource alone. This is currently only known for russian clients.
+    if CS.Loc.alternativeResourceNames then
+      if not fh then
+        for i, alternativeName in pairs(CS.Loc.alternativeResourceNames[SI_ATTRIBUTES1]) do
+          if statcheck(alternativeName) then
+            fh = true
+          end
+        end
+      end
+      
+      if not fm then
+        for i, alternativeName in pairs(CS.Loc.alternativeResourceNames[SI_ATTRIBUTES2]) do
+          if statcheck(alternativeName) then
+            fm = true
+          end
+        end
+      end
+      
+      if not fs then
+        for i, alternativeName in pairs(CS.Loc.alternativeResourceNames[SI_ATTRIBUTES3]) do
+          if statcheck(alternativeName) then
+            fs = true
+          end
+        end
+      end
+    end 
+    
     if fm and fh and fs then
       stat = 7
     elseif fs and fh then
@@ -4573,6 +4603,7 @@ if CS.Debug then
   SLASH_COMMANDS["/langfr"] = function() SetCVar("language.2", "fr") end
   SLASH_COMMANDS["/langen"] = function() SetCVar("language.2", "en") end
   SLASH_COMMANDS["/langde"] = function() SetCVar("language.2", "de") end
+  SLASH_COMMANDS["/langru"] = function() SetCVar("language.2", "ru") end
 end
 
 SLASH_COMMANDS["/cs"] = CS.ShowMain

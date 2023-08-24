@@ -617,6 +617,18 @@ ru = {
 		'|cE8DFAF'..mmb..' исследовать|r',
 		'|cE8DFAF'..lmb..' трек|r',		
 	},
+	alternativeResourceNames = {
+		[SI_ATTRIBUTES1] = {
+			[0] = 'здоровья'
+		},
+		[SI_ATTRIBUTES2] = {
+			[0] = 'магии'
+		},
+		[SI_ATTRIBUTES3] = {
+			[0] = 'запас сил',
+			[1] = 'запаса сил'
+		},
+	},
 	nobagspace = '|cFF0000Недостаточно места!|r',
 	noSlot = '|cFF0000Нет свободного слота для исследования или предмет недоступен!|r',
 	noItemPreview = '|cFF0000Требуется аддон ItemPreview!|r',
