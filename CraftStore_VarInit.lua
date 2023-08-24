@@ -423,6 +423,7 @@ CS.AccountInit = {
 	playrunevoice = true,
 	advancedcolorgrid = true,
 	lockprotection = true,
+	inspirationgain = true,
 	sortsets = 1, --alphabetically
 	sortstyles = 1, --alphabetically
 	bulkcraftlimit = 10,

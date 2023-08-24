@@ -590,12 +590,15 @@ function CS.Queue()
 
     if CS.Inspiration ~= ''
     then
-      local c,x = CSLOOT:AcquireObject()
-      c:SetHidden(false)
-      c:SetAnchor(128,CraftStoreFixed_QuestFrame,128,0,0)
-      c:GetChild(1):SetText(CS.Inspiration)
-      CS.Slide(c,0,20,0,(GuiRoot:GetHeight()/2)-180,3500)
-      zo_callLater(function() CSLOOT:ReleaseObject(x) end,3510)
+      -- Inspiration gain indicator can be disabled, but default behavior remains is that it is enabled
+      if CS.Account.options.inspirationgain or CS.Account.options.inspirationgain == nil then
+        local c,x = CSLOOT:AcquireObject()
+        c:SetHidden(false)
+        c:SetAnchor(128,CraftStoreFixed_QuestFrame,128,0,0)
+        c:GetChild(1):SetText(CS.Inspiration)
+        CS.Slide(c,0,20,0,(GuiRoot:GetHeight()/2)-180,3500)
+        zo_callLater(function() CSLOOT:ReleaseObject(x) end,3510)
+      end
       CS.Inspiration = ''
     end
   end

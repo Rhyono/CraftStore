@@ -360,8 +360,16 @@ CS.OptionsTable = {
 		getFunc     = function() return CS.Account.options.lockprotection end, 
 		setFunc     = function(value) CS.SettingsUpdate('lockprotection',value) end, 
 		default     = CS.AccountInit.options.lockprotection, 
-	},	
+	},
 	[39] = {
+	    type        = "checkbox", 
+		name        = CS.Loc.options.inspirationgain,
+		tooltip     = "",
+		getFunc     = function() return CS.Account.options.inspirationgain end,
+		setFunc     = function(value) CS.SettingsUpdate('inspirationgain',value) end,
+		default     = CS.AccountInit.options.inspirationgain,
+	},
+	[40] = {
 	    type        = "dropdown", 
 		name        = CS.Loc.options.sortsets,
 		tooltip     = "",
@@ -370,7 +378,7 @@ CS.OptionsTable = {
 		setFunc     = function(value) CS.DropdownSettingsUpdate('sortsets',value) end, 
 		default     = CS.SettingFromIndex('sortsets',CS.AccountInit.options.sortsets),
 	},
-	[40] = {
+	[41] = {
 	    type        = "dropdown", 
 		name        = CS.Loc.options.sortstyles,
 		tooltip     = "",
@@ -382,7 +390,7 @@ CS.OptionsTable = {
 					  end, 
 		default     = CS.SettingFromIndex('sortstyles',CS.AccountInit.options.sortstyles),
 	},
-	[41] = {
+	[42] = {
 	    type        = "editbox", 
 		name        = CS.Loc.options.bulkcraftlimit,
 		tooltip     = "",
