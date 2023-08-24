@@ -3,7 +3,7 @@ CS = CraftStoreFixedAndImprovedLongClassName
 CS.Debug = (GetWorldName() == "PTS" or GetDisplayName()=="@VladislavAksjonov")
 CS.Name = 'CraftStoreFixedAndImproved'
 CS.Title = 'CraftStore'
-CS.Author = 'AlphaLemming, BlackSwan, Rhyono'
+CS.Author = 'AlphaLemming, BlackSwan, Rhyono, MuMuQ'
 CS.Version = '2.87'
 CS.Account = nil
 CS.Character = nil

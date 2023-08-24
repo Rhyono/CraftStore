@@ -8,7 +8,7 @@
 ## APIVersion: 101038
 ## Version: 2.87
 ## SavedVariables: CraftStore_Account CraftStore_Character
-## Author: AlphaLemming, BlackSwan, Rhyono
+## Author: AlphaLemming, BlackSwan, Rhyono, MuMuQ
 ## Description: A tool for crafting research, with style and recipe tracking and new crafting interfaces. 
 ## OptionalDependsOn: ItemSaver FCOItemSaver MasterMerchant TamrielTradeCentre LibChatMessage
 ## DependsOn: LibBinaryEncode>=34 LibAddonMenu-2.0>=32
