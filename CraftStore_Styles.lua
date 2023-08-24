@@ -134,9 +134,9 @@ function CS.STYLE()
 	[139] = {2,3465,188325}, -- House Monard
 	[140] = {2,3546,190890}, -- Scribes Of Mora
 	[141] = {2,3547,190907}, -- Blessed Inheritor
-	--[142] = {2,?,X}, -- Clan Dreamcarver
+	[142] = {2,3667,194493}, -- Clan Dreamcarver
 	[143] = {2,3668,194514}, -- Dead Keeper
-	--[144] = {2,?,X}, -- Kindred's Concord
+	[144] = {2,3669,194541}, -- Kindred's Concord
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -263,9 +263,9 @@ function CS.STYLE()
 	[139] = {188324, 188325, 188339, 0}, -- House Mornard
 	[140] = {190889, 190890, 190904, 0}, -- Scribes Of Mora
 	[141] = {190906, 190907, 190921, 0}, -- Blessed Inheritor
-	--[142] = {X-1, X, X+15, 0}, -- Clan Dreamcarver
+	[142] = {194492, 194493, 194507, 0}, -- Clan Dreamcarver
 	[143] = {194513, 194514, 194528, 0}, -- Dead Keeper
-	--[144] = {X-1, X, X+15, 0}, -- Kindred's Concord
+	[144] = {194540, 194541, 194555, 0}, -- Kindred's Concord
 	}
   
 	--build visual motif number list
