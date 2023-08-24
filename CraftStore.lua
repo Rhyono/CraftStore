@@ -1886,6 +1886,23 @@ function CS.CookSearchRecipe()
   end
 end
 
+
+function CS.CookShowVanilla()
+  CraftStoreFixed_Cook:SetHidden(true)
+  for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(1) end
+  CS.Cook.job = {amount=0}
+  for x = 1,CraftStoreFixed_CookFoodSectionScrollChild:GetNumChildren() do CS.HideControl('CraftStoreFixed_CookFoodSectionScrollChildButton'..x) end
+  ZO_KeybindStripControl:SetHidden(false)
+end
+
+function CS.CookShow()
+  CraftStoreFixed_CookAmount:SetText('')
+  CraftStoreFixed_CookSearch:SetText(GetString(SI_GAMEPAD_HELP_SEARCH)..'...')
+  CraftStoreFixed_Cook:SetHidden(false)
+  for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(0) end
+  ZO_KeybindStripControl:SetHidden(not IsInGamepadPreferredMode())
+end
+
 function CS.RuneCreate(control,button)
   if not control then
     return
@@ -3823,6 +3840,7 @@ function CS.PanelInitialize()
   CraftStoreFixed_CookCategoryButtonWrit.data = { info = CS.Loc.TT[23] }
   CraftStoreFixed_CookCategoryButtonFurniture.data = { info = CS.Loc.TT[24] }
   CraftStoreFixed_CookCategoryButtonFurnitureFavorites.data = { info = CS.Loc.TT[24] .. ' ' .. CS.Loc.TT[11] }
+  CraftStoreFixed_CookCategoryButtonFillet.data = { info = CS.Loc.TT[35] }
   CraftStoreFixed_BlueprintCategoryButton1.data = {info = GetString(SI_RECIPECRAFTINGSYSTEM1)}
   CraftStoreFixed_BlueprintCategoryButton2.data = {info = GetString(SI_RECIPECRAFTINGSYSTEM2)}
   CraftStoreFixed_BlueprintCategoryButton3.data = {info = GetString(SI_RECIPECRAFTINGSYSTEM3)}

@@ -105,6 +105,7 @@ de = {
 		'Verfolgt bekannte Blaupausen',--32
 		'|cE8DFAF'..mmb..' Forschung|r',
 		'|cE8DFAF'..lmb..' Verfolgen|r',
+		'Fisch filetieren',
 	},
 	nobagspace = '|cFF0000Nicht genügend Platz im Inventar!|r',
 	noItemPreview = '|cFF0000ItemPreview erforderlich!|r',
@@ -241,6 +242,7 @@ en = {
 		'Tracks known blueprints',--32
 		'|cE8DFAF'..mmb..' Research|r',
 		'|cE8DFAF'..lmb..' Track|r',
+		'Fillet',
 	},
 	nobagspace = '|cFF0000Not enough bagspace!|r',
 	noSlot = '|cFF0000No free research slot or item inaccessible!|r',
