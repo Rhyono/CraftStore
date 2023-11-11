@@ -5,8 +5,8 @@
 ; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
 
 ## Title: CraftStore
-## APIVersion: 101038
-## Version: 2.88
+## APIVersion: 101040
+## Version: 2.89
 ## SavedVariables: CraftStore_Account CraftStore_Character
 ## Author: AlphaLemming, BlackSwan, Rhyono, MuMuQ
 ## Description: A tool for crafting research, with style and recipe tracking and new crafting interfaces. 
