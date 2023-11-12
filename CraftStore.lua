@@ -523,6 +523,18 @@ function CS.Slide(c,x1,y1,x2,y2,duration)
   a:PlayFromStart()
 end
 
+local function is_PerfectPixel_enabled()
+    local addonManager = GetAddOnManager()
+    local numAddOns = addonManager:GetNumAddOns()
+    for i = 1, numAddOns do
+        local name, _, state = addonManager:GetAddOnInfo(i)
+        if name == "PerfectPixel" and state == "enabled" then
+            return true
+        end
+    end
+    return false
+end
+
 function CS.Queue()
   if CS.Init then
   -- ensure at least one alarm is on
@@ -582,9 +594,11 @@ function CS.Queue()
       CS.Account.options.usecook
     then
       ZO_ProvisionerTopLevelTooltip:SetHidden(true)
-      if PP ~= nil
+      if is_PerfectPixel_enabled() == true
       then
         ZO_ProvisionerTopLevel:SetHidden(true)
+        ZO_ProvisionerTopLevelDetailsDivider:SetHidden(false)
+        ZO_ProvisionerTopLevelDetails:SetHidden(false)
       end
     end
 
@@ -1084,7 +1098,7 @@ function CS.UpdateRecipeKnowledge()
           end
         end
       end
-      
+
       if not fm then
         for i, alternativeName in pairs(CS.Loc.alternativeResourceNames[SI_ATTRIBUTES2]) do
           if statcheck(alternativeName) then
@@ -1092,7 +1106,7 @@ function CS.UpdateRecipeKnowledge()
           end
         end
       end
-      
+
       if not fs then
         for i, alternativeName in pairs(CS.Loc.alternativeResourceNames[SI_ATTRIBUTES3]) do
           if statcheck(alternativeName) then
@@ -1100,8 +1114,8 @@ function CS.UpdateRecipeKnowledge()
           end
         end
       end
-    end 
-    
+    end
+
     if fm and fh and fs then
       stat = 7
     elseif fs and fh then
