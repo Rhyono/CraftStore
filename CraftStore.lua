@@ -1910,6 +1910,7 @@ function CS.CookShowVanilla()
   end
   for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(1) end
   ZO_KeybindStripControl:SetHidden(false)
+  ZO_ProvisionerTopLevel:SetHidden(false)
 end
 
 function CS.CookShow()
@@ -1920,6 +1921,7 @@ function CS.CookShow()
   if not IsInGamepadPreferredMode() then
     for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(0) end
     ZO_KeybindStripControl:SetHidden(true)
+    ZO_ProvisionerTopLevel:SetHidden(true)
   end
 end
 
