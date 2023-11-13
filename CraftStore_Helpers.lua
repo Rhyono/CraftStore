@@ -162,3 +162,55 @@ end
 if LibChatMessage then
 	CS.Chat = LibChatMessage("CraftStore", "CS")
 end
+
+-- utility function for finding furnishing recipes
+function CS.FindUnidentifiedFurnishingRecipes(startIndex, endIndex)
+	exists = {}
+	for i=1, #CS.Furnisher.recipelist do
+		exists[CS.Furnisher.recipelist[i]]=true
+	end
+
+	unknown = {}
+	j=1
+
+	suffix = ":" .. 364 .. ":" .. 50 .. ":0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:10000:0|h|h"
+	
+	d("Searching in range "..startIndex.." .. "..endIndex)
+
+	for i=startIndex, endIndex do
+		isUnknown = false
+		if exists[i] == nil then
+			link= "|H1:item:" .. i .. suffix
+			name=GetItemLinkName(link)
+			if string.find(name, "Praxis:") then
+				isUnknown = true
+			elseif string.find(name, "Blueprint:") then
+				isUnknown = true
+			elseif string.find(name, "Diagram:") then
+				isUnknown = true
+			elseif string.find(name, "Pattern:") then
+				isUnknown = true
+			elseif string.find(name, "Formula:") then
+				isUnknown = true
+			elseif string.find(name, "Sketch:") then
+				isUnknown = true
+			elseif string.find(name, "Design:") then
+				isUnknown = true
+			end
+		end
+		if isUnknown then
+			d(i .. " - " .. link)
+			unknown[j]=i
+			j = j + 1
+		end
+	end
+	if #unknown > 1 then
+		unknownIds = ""
+		for i=1, #unknown do
+			unknownIds = unknownIds .. unknown[i] ..","
+		end
+		d(unknownIds)
+	else
+		d("No unknown furnishing recipes found in range.")
+	end
+end
