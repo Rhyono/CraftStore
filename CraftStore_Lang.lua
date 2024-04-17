@@ -373,7 +373,8 @@ fr = {
 		'|cFFFFFFÉclats célestes|r\nRecueilli/Total',
 		'Suit les plans connus',--32
 		'|cE8DFAF'..mmb..' Recherche|r',
-		'|cE8DFAF'..lmb..' Piste|r',		
+		'|cE8DFAF'..lmb..' Piste|r',
+		'Filet',		
 	},
 	nobagspace = '|cFF0000Pas assez d\'espace d\'inventaire!|r',
 	noSlot = '|cFF0000Aucun emplacement de recherche gratuit ou élément inaccessible!|r',
@@ -504,6 +505,7 @@ br = {
 		'Rastreia diagrama Conhecidas',--32
 		'|cE8DFAF'..mmb..' Pesquisa|r',
 		'|cE8DFAF'..lmb..' Seguir|r',
+		'Filé',
 	},
 	nobagspace = '|cFF0000Sem espaço suficiente!|r',
 	noSlot = '|cFF0000Nenhuma posição de pesquisa livre ou item inacessível!|r',
@@ -634,7 +636,8 @@ ru = {
 		'|cFFFFFFНебесные осколки|r\nСобрано/Всего',--31
 		'Отслеживать известные чертежи',--32
 		'|cE8DFAF'..mmb..' исследовать|r',
-		'|cE8DFAF'..lmb..' трек|r',		
+		'|cE8DFAF'..lmb..' трек|r',
+		'филе',	
 	},
 	alternativeResourceNames = {
 		[SI_ATTRIBUTES1] = {
@@ -777,6 +780,7 @@ it = {
 		'Segna progetti conosciuti',--32
 		'|cE8DFAF'..mmb..' Ricerca|r',
 		'|cE8DFAF'..lmb..' Segna|r',
+		'Filetto',
 	},
 	nobagspace = '|cFF0000Non c\'è abbastanza spazio nella borsa!|r',
 	noSlot = '|cFF0000Nessuno slot di ricerca libero o oggetto inaccessibile!|r',
@@ -908,6 +912,7 @@ es = {
 		'Seguimiento de planos conocidos',--32
 		'|cE8DFAF'..mmb..' Investigación|r',
 		'|cE8DFAF'..lmb..' Seguimiento|r',
+		'Filete',
 	},
 	nobagspace = '|cFF0000No hay espacio suficiente!|r',
 	noSlot = '|cFF0000Sin ranura de investigación libre u objeto inaccesible!|r', 
