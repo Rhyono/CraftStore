@@ -196,6 +196,8 @@ function CS.FindUnidentifiedFurnishingRecipes(startIndex, endIndex)
 				isUnknown = true
 			elseif string.find(name, "Design:") then
 				isUnknown = true
+			elseif string.find(name, "Recipe:") then
+				isUnknown = true
 			end
 		end
 		if isUnknown then
@@ -212,5 +214,17 @@ function CS.FindUnidentifiedFurnishingRecipes(startIndex, endIndex)
 		d(unknownIds)
 	else
 		d("No unknown furnishing recipes found in range.")
+	end
+end
+
+function CS.ListWayshrines(startIndex, endIndex)
+    startIndex = startIndex or 1
+	endIndex = endIndex or GetNumFastTravelNodes()
+	if  endIndex > GetNumFastTravelNodes() then
+		endIndex = GetNumFastTravelNodes()
+	end
+	for i=startIndex, endIndex do
+	    known,name = GetFastTravelNodeInfo(i)
+		d(i .. ": " .. name)
 	end
 end
