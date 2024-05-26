@@ -360,7 +360,7 @@ CS.Sets = { --Items: Heavy, Medium, Robe, Shirt GetUnitZoneIndex('player') { Dag
   {traits=7,nodes={483,483,483}, item={172842,172857,172849,172854}, zone={834,834,834}},  -- Blackwood:Heartland Conqueror's
   {traits=7,nodes={494,494,494}, item={179193,179208,179200,179205}, zone={1272,1272,1272}},  -- Deadlands:Deadlands Demolisher
   {traits=7,nodes={511,511,511}, item={185544,185559,185551,185556}, zone={883,883,883}},  -- High Isles:Druid's Braid
-  {traits=7,nodes={528,528,528}, item={191245,191260,191152,191157}, zone={1383,1383,1383}},  -- Firesong:Chimera's Rebuke
+  {traits=7,nodes={528,528,528}, item={191245,191260,191252,191257}, zone={1383,1383,1383}},  -- Firesong:Chimera's Rebuke
   {traits=7,nodes={546,546,546}, item={195390,195405,195397,195402}, zone={1413,1413,1413}},  -- Necrom:Seeker Synthesis
   {traits=7,nodes={580,580,580}, item={206166,206181,206173,206178}, zone={1443,1443,1443}},  -- Gold Road:Threads of War
 
