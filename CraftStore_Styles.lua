@@ -405,6 +405,33 @@ function CS.STYLE()
 		end
 		return false
 	end
+	
+	function self.IsUnknownStyle(style)
+        -- If none of the chapters are known, return true
+		if not styles[style] then return false end
+		if CS.SelectedPlayer == CS.CurrentPlayer then
+		if self.IsSimpleStyle(style) then
+			return not IsSmithingStyleKnown(style)
+		else 
+			if self.IsCrownStyle(style) then
+				return not IsItemLinkBookKnown(('|H1:item:%u:6:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h'):format(styles[style][3]))
+			else      
+				for chapter = 1,14 do
+					local known = self.IsKnownStyle(style,chapter)
+					if known then return false end
+				end
+			return true
+			end
+		end
+		else
+			local result = true
+			for chapter = 1,14 do
+				result = result and not CS.Data.style.knowledge[CS.SelectedPlayer][CS.Style.GetChapterId(style,chapter)]
+			end
+			return result
+		end
+		return false
+	end
 
 	function self.IsKnownStyle(style,chapter)
 		if not styles[style] then return false end
