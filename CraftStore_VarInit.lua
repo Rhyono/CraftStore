@@ -461,6 +461,7 @@ CS.CharInit = {
   hidestyles = false,
   hidecrownstyles = false,
   hideperfectedstyles = false,
+  hideunknownstyles = false,
   hideKnownRecipes = false,
   hideUnknownRecipes = false,
   hideKnownBlueprints = false,

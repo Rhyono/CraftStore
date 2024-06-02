@@ -24,23 +24,29 @@
               <Label name="$(parent)Header" font="ZoFontGame" color="FFAA33">
                 <Anchor point="2" relativePoint="2" relativeTo="$(parent)TopSection" offsetX="10"/>
               </Label>		  
-              <Button name="$(parent)HideButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+              <Button name="$(parent)HideButton" clickSound="Click" horizontalAlignment="0" verticalAlignment="1" font="CraftStoreFixedFont">
                 <FontColors normalColor="E8DFAF"/>
-                <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="130" relativeTo="$(parent)TopSection"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="180" relativeTo="$(parent)TopSection"/>
                 <Dimensions y="22" x="200"/>
                 <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideStyles()</OnClicked>
               </Button>
-              <Button name="$(parent)HideCrownButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+              <Button name="$(parent)HideCrownButton" clickSound="Click" horizontalAlignment="0" verticalAlignment="1" font="CraftStoreFixedFont">
                 <FontColors normalColor="E8DFAF"/>
-                <Anchor point="RIGHT" relativePoint="RIGHT" offsetX="200" relativeTo="$(parent)HideButton"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="-10" offsetX="350" relativeTo="$(parent)TopSection"/>
                 <Dimensions y="22" x="200"/>
                 <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideCrownStyles()</OnClicked>
               </Button>			  
-              <Button name="$(parent)HidePerfectedButton" clickSound="Click" verticalAlignment="1" font="CraftStoreFixedFont">
+              <Button name="$(parent)HidePerfectedButton" clickSound="Click" horizontalAlignment="0" verticalAlignment="1" font="CraftStoreFixedFont">
                 <FontColors normalColor="E8DFAF"/>
-                <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="130" relativeTo="$(parent)TopSection"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="180" relativeTo="$(parent)TopSection"/>
                 <Dimensions y="22" x="200"/>
                 <OnClicked>CraftStoreFixedAndImprovedLongClassName.HidePerfectedStyles()</OnClicked>
+              </Button>
+              <Button name="$(parent)HideUnknownButton" clickSound="Click" horizontalAlignment="0" verticalAlignment="1" font="CraftStoreFixedFont">
+                <FontColors normalColor="E8DFAF"/>
+                <Anchor point="LEFT" relativePoint="LEFT" offsetY="10" offsetX="350" relativeTo="$(parent)TopSection"/>
+                <Dimensions y="22" x="200"/>
+                <OnClicked>CraftStoreFixedAndImprovedLongClassName.HideUnknownStyles()</OnClicked>
               </Button>
               <Button name="$(parent)CloseButton" clickSound="Click">
                 <Anchor point="8" relativePoint="8" relativeTo="$(parent)TopSection" offsetX="-5"/>

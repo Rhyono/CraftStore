@@ -2887,15 +2887,26 @@ function CS.HidePerfectedStyles(init)
   CS.FilterStyles()
 end
 
+function CS.HideUnknownStyles(init)
+  local val, tex = {[true]='checked',[false]='unchecked'}, '|t16:16:esoui/art/buttons/checkbox_<<1>>.dds|t |t2:2:x.dds|t '
+  if not init then
+    CS.Character.hideunknownstyles = not CS.Character.hideunknownstyles
+  end
+  CraftStoreFixed_StyleHideUnknownButton:SetText(ZOSF(tex,val[CS.Character.hideunknownstyles])..CS.Loc.hideUnknown)
+  CS.FilterStyles()
+end
+
 function CS.FilterStyles()
   local h = {[true]=0,[false]=90}
   local filterPerfected = CS.Character.hideperfectedstyles
   local filterSimple = CS.Character.hidestyles
   local filterCrown = CS.Character.hidecrownstyles
+  local filterUnknown = CS.Character.hideunknownstyles
   for id,data in pairs(styleNames) do
     local style = GetValidItemStyleId(data.id)
       local c = WM:GetControlByName('CraftStoreFixed_StyleRow'..id)
       if (filterPerfected and CS.Style.IsPerfectedStyle(style)) or
+         (filterUnknown and CS.Style.IsUnknownStyle(style)) or
          (filterCrown and CS.Style.IsCrownStyle(style)) or
          (filterSimple and CS.Style.IsSimpleStyle(style))
       then
