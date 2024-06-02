@@ -137,6 +137,9 @@ function CS.STYLE()
 	[142] = {2,3667,194493}, -- Clan Dreamcarver
 	[143] = {2,3668,194514}, -- Dead Keeper
 	[144] = {2,3669,194541}, -- Kindred's Concord
+	[145] = {2,3921,203183}, -- The Recollection
+	[146] = {2,3922,203215}, -- Blind Path Cultist
+	[147] = {2,3923,203361}, -- Shardborn
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -266,6 +269,9 @@ function CS.STYLE()
 	[142] = {194492, 194493, 194507, 0}, -- Clan Dreamcarver
 	[143] = {194513, 194514, 194528, 0}, -- Dead Keeper
 	[144] = {194540, 194541, 194555, 0}, -- Kindred's Concord
+	[145] = {203182, 203183, 203196, 0}, -- The Recollection
+	[146] = {203214, 203215, 203228, 0}, -- Blind Path Cultist
+	[147] = {203360, 203361, 203375, 0}, -- Shardborn
 	}
   
 	--build visual motif number list
