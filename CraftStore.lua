@@ -436,7 +436,7 @@ function CS.IsLocked(bagId,slotIndex)
   end
   -- Determine equip type
   local isJewelry = false
-  if equipType == EQUIP_TYPE_NECK or equipType == EQUIP_TYPE_RING then
+  if equipType == EQUIP_TYPE_RING or equipType == EQUIP_TYPE_NECK then
     isJewelry = true
   end
 
@@ -3187,9 +3187,9 @@ function CS.GetTrait(link)
     line=7
   end
   --Handle Jewelry
-  if eq==EQUIP_TYPE_NECK or eq==EQUIP_TYPE_RING then
+  if eq==EQUIP_TYPE_RING or eq==EQUIP_TYPE_NECK then
     craft=7
-    line = eq==EQUIP_TYPE_NECK and 1 or 2
+    line = eq==EQUIP_TYPE_RING and 1 or 2
     --No real order to jewelry traits
     if trait==ITEM_TRAIT_TYPE_JEWELRY_ARCANE then
       trait=1
@@ -3244,8 +3244,8 @@ function CS.IsValidEquip(equip)
   or equip==EQUIP_TYPE_TWO_HAND
   or equip==EQUIP_TYPE_SHOULDERS
   or equip==EQUIP_TYPE_WAIST
-  or equip==EQUIP_TYPE_NECK
   or equip==EQUIP_TYPE_RING
+  or equip==EQUIP_TYPE_NECK
   then return true else return false end
 end
 
