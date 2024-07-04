@@ -360,6 +360,11 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
   CS.Account = ZO_SavedVars:NewAccountWide('CraftStore_Account',3,GetWorldName(),CS.AccountInit)
   CS.Character = ZO_SavedVars:NewCharacterIdSettings('CraftStore_Character',2,GetWorldName(),CS.CharInit)
 
+  if CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone == nil or CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone == false then
+    CS.MigrateJewelryIdSwap()
+    CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone = true
+  end
+
   -- remove unpublished furnishing recipies
   CS.Furnisher.recipelist = CS.FilterPublishedItems(CS.Furnisher.recipelist)
 
