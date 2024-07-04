@@ -156,7 +156,7 @@ function CraftStoreFixedAndImprovedLongClassName.FLASK()
         else
             for y,x in pairs(plant) do
                 local icon, _, link = self.GetReagent(x)
-                item = item..zo_strformat('|t32:32:<<1>>|t', icon)
+                local item = item..zo_strformat('|t32:32:<<1>>|t', icon)
                 color = color..zo_strformat('<<C:1>>', link)
                 if y < #plant then
                     item = item..' + '

@@ -290,7 +290,7 @@ CS.Mount = {
 
 -- Script for printing the latest wayshrines, 494 is one of the last Deadlands wayshrine nodes
 --for i=494, GetNumFastTravelNodes() do
---  _, name = GetFastTravelNodeInfo(i)
+--  local _, name = GetFastTravelNodeInfo(i)
 --  d(i, name)
 --end
 

@@ -491,7 +491,7 @@ function CS.STYLE()
 		elseif not styles[style] then 
 			local link = GetItemStyleMaterialLink(style)
 			local icon = GetItemLinkInfo(link)
-			name = zo_strformat('<<C:1>>',GetItemStyleName(style))
+			local name = zo_strformat('<<C:1>>',GetItemStyleName(style))
 			if name ~= "None" and name ~= "" then
 				return true 
 			else
@@ -506,7 +506,7 @@ function CS.STYLE()
 		local name, aName, aLink, popup
 		local link = GetItemStyleMaterialLink(style)
 		local icon = GetItemLinkInfo(link)
-		name = zo_strformat('<<C:1>>',GetItemStyleName(style))
+		local name = zo_strformat('<<C:1>>',GetItemStyleName(style))
 		--Check for undefined names
 		if name:find("Unused") then
 			for index,data in pairs (CS.Loc.styleNames) do

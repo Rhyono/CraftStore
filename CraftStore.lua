@@ -1813,11 +1813,11 @@ function CS.CookShowCategory(list,override)
         for list_num=1,#lists do
           local _,num,_,_,_,_,sound = GetRecipeListInfo(lists[list_num])
           for id = num, 1, -1 do
-            local _, name = GetRecipeInfo(lists[list_num],id)
+            local _, recipe_name = GetRecipeInfo(lists[list_num],id)
             for _, step in pairs(CS.Quest[CRAFTING_TYPE_PROVISIONING].work) do
               --Remove hyphens, capitalization and control characters
               local temp_step = step:gsub("-"," "):gsub("%^%a*",""):lower()
-              local temp_name = name:gsub("-"," "):gsub("%^%a*",""):lower()
+              local temp_name = recipe_name:gsub("-"," "):gsub("%^%a*",""):lower()
               --German adjustments
               if lang == 'de' then
                 --Remove trailing s

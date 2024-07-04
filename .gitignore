@@ -43,3 +43,7 @@ luac.out
 
 # Jetbrains IDEs
 .idea
+
+# VSCode
+*.code-workspace
+.history
