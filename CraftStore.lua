@@ -3170,7 +3170,7 @@ function CS.GetTrait(link)
   elseif wt==WEAPONTYPE_HEALING_STAFF then
     craft=6;line=5;
   elseif wt==WEAPONTYPE_SHIELD then
-    craft=6;line=6;trait=trait-10;
+    craft=6;line=6;
   elseif eq==EQUIP_TYPE_CHEST then
     line=1
   elseif eq==EQUIP_TYPE_FEET then
