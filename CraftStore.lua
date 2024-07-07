@@ -3139,7 +3139,7 @@ function CS.GetTrait(link)
   local at,wt,line=GetItemLinkArmorType(link),GetItemLinkWeaponType(link),nil
   if trait==ITEM_TRAIT_TYPE_ARMOR_NIRNHONED then
     trait=19
-    if at == ARMORTYPE_NONE then trait = 9 end
+    if at == ARMORTYPE_NONE then trait = 19 end
   end -- Nirnhoned Weapon replacement
   if trait==ITEM_TRAIT_TYPE_WEAPON_NIRNHONED then
     trait=9
@@ -3170,7 +3170,7 @@ function CS.GetTrait(link)
   elseif wt==WEAPONTYPE_HEALING_STAFF then
     craft=6;line=5;
   elseif wt==WEAPONTYPE_SHIELD then
-    craft=6;line=6;
+    craft=6;line=6;trait=trait-10;
   elseif eq==EQUIP_TYPE_CHEST then
     line=1
   elseif eq==EQUIP_TYPE_FEET then
