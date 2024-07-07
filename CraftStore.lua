@@ -436,7 +436,7 @@ function CS.IsLocked(bagId,slotIndex)
   end
   -- Determine equip type
   local isJewelry = false
-  if equipType == EQUIP_TYPE_NECK or equipType == EQUIP_TYPE_RING then
+  if equipType == EQUIP_TYPE_RING or equipType == EQUIP_TYPE_NECK then
     isJewelry = true
   end
 
@@ -1813,11 +1813,11 @@ function CS.CookShowCategory(list,override)
         for list_num=1,#lists do
           local _,num,_,_,_,_,sound = GetRecipeListInfo(lists[list_num])
           for id = num, 1, -1 do
-            local _, name = GetRecipeInfo(lists[list_num],id)
+            local _, recipe_name = GetRecipeInfo(lists[list_num],id)
             for _, step in pairs(CS.Quest[CRAFTING_TYPE_PROVISIONING].work) do
               --Remove hyphens, capitalization and control characters
               local temp_step = step:gsub("-"," "):gsub("%^%a*",""):lower()
-              local temp_name = name:gsub("-"," "):gsub("%^%a*",""):lower()
+              local temp_name = recipe_name:gsub("-"," "):gsub("%^%a*",""):lower()
               --German adjustments
               if lang == 'de' then
                 --Remove trailing s
@@ -3139,7 +3139,7 @@ function CS.GetTrait(link)
   local at,wt,line=GetItemLinkArmorType(link),GetItemLinkWeaponType(link),nil
   if trait==ITEM_TRAIT_TYPE_ARMOR_NIRNHONED then
     trait=19
-    if at == ARMORTYPE_NONE then trait = 9 end
+    if at == ARMORTYPE_NONE then trait = 19 end
   end -- Nirnhoned Weapon replacement
   if trait==ITEM_TRAIT_TYPE_WEAPON_NIRNHONED then
     trait=9
@@ -3187,9 +3187,9 @@ function CS.GetTrait(link)
     line=7
   end
   --Handle Jewelry
-  if eq==EQUIP_TYPE_NECK or eq==EQUIP_TYPE_RING then
+  if eq==EQUIP_TYPE_RING or eq==EQUIP_TYPE_NECK then
     craft=7
-    line = eq==EQUIP_TYPE_NECK and 1 or 2
+    line = eq==EQUIP_TYPE_RING and 1 or 2
     --No real order to jewelry traits
     if trait==ITEM_TRAIT_TYPE_JEWELRY_ARCANE then
       trait=1
@@ -3244,8 +3244,8 @@ function CS.IsValidEquip(equip)
   or equip==EQUIP_TYPE_TWO_HAND
   or equip==EQUIP_TYPE_SHOULDERS
   or equip==EQUIP_TYPE_WAIST
-  or equip==EQUIP_TYPE_NECK
   or equip==EQUIP_TYPE_RING
+  or equip==EQUIP_TYPE_NECK
   then return true else return false end
 end
 

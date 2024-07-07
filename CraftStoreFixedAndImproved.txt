@@ -19,6 +19,7 @@ XML/UI/CraftStore_Font.xml
 CraftStore_VarInit.lua
 ;CraftStore_Flask.lua
 CraftStore_Styles.lua
+CraftStore_Migrations.lua
 CraftStore.lua
 ;CraftStore_MainMenu.lua
 CraftStore_LAM.lua

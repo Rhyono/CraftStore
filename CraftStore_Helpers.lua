@@ -165,23 +165,23 @@ end
 
 -- utility function for finding furnishing recipes
 function CS.FindUnidentifiedFurnishingRecipes(startIndex, endIndex)
-	exists = {}
+	local exists = {}
 	for i=1, #CS.Furnisher.recipelist do
 		exists[CS.Furnisher.recipelist[i]]=true
 	end
 
-	unknown = {}
-	j=1
+	local unknown = {}
+	local j=1
 
-	suffix = ":" .. 364 .. ":" .. 50 .. ":0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:10000:0|h|h"
+	local suffix = ":" .. 364 .. ":" .. 50 .. ":0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:10000:0|h|h"
 	
 	d("Searching in range "..startIndex.." .. "..endIndex)
 
 	for i=startIndex, endIndex do
-		isUnknown = false
+		local isUnknown = false
 		if exists[i] == nil then
-			link= "|H1:item:" .. i .. suffix
-			name=GetItemLinkName(link)
+			local link= "|H1:item:" .. i .. suffix
+			local name=GetItemLinkName(link)
 			if string.find(name, "Praxis:") then
 				isUnknown = true
 			elseif string.find(name, "Blueprint:") then
@@ -207,7 +207,7 @@ function CS.FindUnidentifiedFurnishingRecipes(startIndex, endIndex)
 		end
 	end
 	if #unknown > 1 then
-		unknownIds = ""
+		local unknownIds = ""
 		for i=1, #unknown do
 			unknownIds = unknownIds .. unknown[i] ..","
 		end
@@ -224,7 +224,7 @@ function CS.ListWayshrines(startIndex, endIndex)
 		endIndex = GetNumFastTravelNodes()
 	end
 	for i=startIndex, endIndex do
-	    known,name = GetFastTravelNodeInfo(i)
+	    local known,name = GetFastTravelNodeInfo(i)
 		d(i .. ": " .. name)
 	end
 end
