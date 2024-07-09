@@ -394,7 +394,7 @@ CS.AccountInit = {
   storage = {},
   materials = {},
   announce = {},
-  crafting = { jewelryIdSwapMigrationAlreadyDone = false, researched = {}, researching = {}, studies = {}, stored = {}, skill = {} },
+  crafting = { jewelryIdSwapMigrationAlreadyDoneDone = false, researched = {}, researching = {}, studies = {}, stored = {}, skill = {} },
   style = { tracking = {}, knowledge = {} },
   cook =  { tracking = {}, knowledge = {}, ingredients = {} },
   furnisher =  { tracking = {}, knowledge = {}, ingredients = {} },
