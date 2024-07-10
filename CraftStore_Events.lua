@@ -175,6 +175,20 @@ function CS.OnReticleHiddenUpdate(eventCode,hidden)
 end
 
 function CS.OnPlayerActivated(eventCode,initial)
+  if CS.Debug then zo_callLater(function() CHAT_ROUTER:AddSystemMessage("CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone: "..tostring(CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone)) end, 50) end
+  if CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone == nil or CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone == false then
+    zo_callLater(
+            function()
+                CHAT_ROUTER:AddSystemMessage("[CraftStore] The internal indices of the game for jewelry (rings and necklaces) got swapped by ZOS. CraftStore need to migrate its SavedVariables once. Starting...")
+            end, 50)
+    CS.MigrateJewelryIdSwap()
+    CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone = true
+    zo_callLater(
+            function()
+                CHAT_ROUTER:AddSystemMessage("[CraftStore] Migration of CraftStore's SavedVariables finished.")
+            end, 50)
+  end
+
   CS.UpdateAccountVars()
   CS.UpdatePlayer()
   CS.UpdateStyleKnowledge(true)
@@ -359,20 +373,6 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
   --cs_flask = CS.CS.Flask()  
   CS.Account = ZO_SavedVars:NewAccountWide('CraftStore_Account',3,GetWorldName(),CS.AccountInit)
   CS.Character = ZO_SavedVars:NewCharacterIdSettings('CraftStore_Character',2,GetWorldName(),CS.CharInit)
-
-  if CS.Debug then zo_callLater(function() CHAT_ROUTER:AddSystemMessage("CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone: "..tostring(CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone)) end, 50) end
-  if CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone == nil or CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone == false then
-    zo_callLater(
-            function()
-                CHAT_ROUTER:AddSystemMessage("[CraftStore] The internal indices of the game for jewelry (rings and necklaces) got swapped by ZOS. CraftStore need to migrate its SavedVariables once. Starting...")
-            end, 50)
-    CS.MigrateJewelryIdSwap()
-    CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone = true
-    zo_callLater(
-            function()
-                CHAT_ROUTER:AddSystemMessage("[CraftStore] Migration of CraftStore's SavedVariables finished.")
-            end, 50)
-  end
 
   -- remove unpublished furnishing recipies
   CS.Furnisher.recipelist = CS.FilterPublishedItems(CS.Furnisher.recipelist)
