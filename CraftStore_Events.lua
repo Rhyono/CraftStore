@@ -175,14 +175,14 @@ function CS.OnReticleHiddenUpdate(eventCode,hidden)
 end
 
 function CS.OnPlayerActivated(eventCode,initial)
-  if CS.Debug then zo_callLater(function() CHAT_ROUTER:AddSystemMessage("CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone: "..tostring(CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone)) end, 50) end
+  if CS.Debug then zo_callLater(function() CHAT_ROUTER:AddSystemMessage("CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone: "..tostring(CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone)) end, 50) end
   if CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone == nil or CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone == false then
     zo_callLater(
             function()
                 CHAT_ROUTER:AddSystemMessage("[CraftStore] The internal indices of the game for jewelry (rings and necklaces) got swapped by ZOS. CraftStore need to migrate its SavedVariables once. Starting...")
             end, 50)
     CS.MigrateJewelryIdSwap()
-    CS.Account.crafting.jewelryIdSwapMigrationAlreadyDone = true
+    CS.Account.crafting.jewelryIdSwapMigrationAlreadyDoneDone = true
     zo_callLater(
             function()
                 CHAT_ROUTER:AddSystemMessage("[CraftStore] Migration of CraftStore's SavedVariables finished.")
