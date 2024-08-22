@@ -140,6 +140,11 @@ function CS.STYLE()
 	[145] = {2,3921,203183}, -- The Recollection
 	[146] = {2,3922,203215}, -- Blind Path Cultist
 	[147] = {2,3923,203361}, -- Shardborn
+	[148] = {2,3924,203474}, -- West Weald Legion
+	[149] = {2,3925,203493}, -- Lucent Sentinel
+	--[150] = {2,?,X}, -- ?
+	--[151] = {2,?,203835}, -- Hircine Bloodhunter
+	--[152] = {2,?,X}, -- Skingrad Vedette
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -272,6 +277,11 @@ function CS.STYLE()
 	[145] = {203182, 203183, 203196, 0}, -- The Recollection
 	[146] = {203214, 203215, 203228, 0}, -- Blind Path Cultist
 	[147] = {203360, 203361, 203375, 0}, -- Shardborn
+	[148] = {203473, 203474, 204488, 0}, -- West Weald Legion
+	[149] = {203492, 203493, 203507, 0}, -- Lucent Sentinel
+	--[150] = {X-1, X, X+15, 0}, -- ?
+	--[151] = {203834, 203835, 203849, 0}, -- Hircine Bloodhunter
+	--[152] = {X-1, X, X+15, 0}, -- Skingrad Vedette
 	}
   
 	--build visual motif number list
