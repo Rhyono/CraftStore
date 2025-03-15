@@ -48,11 +48,25 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
 	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)	  
     
     if not CS.Cook.hooksInitialized and not IsInGamepadPreferredMode() then
-      ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton2,'OnMouseDown', CS.CookFoodTabShow)
-      ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton3,'OnMouseDown', CS.CookDrinkTabShow)
-      ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton4,'OnMouseDown', CS.CookFurnitureTabShow)
+      if ZO_ProvisionerTopLevelTabsButton2 then
+          ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton2, 'OnMouseDown', CS.CookFoodTabShow)
+      else
+          d("[CraftStore] ERROR: ZO_ProvisionerTopLevelTabsButton2 no existe.")
+      end
+
+      if ZO_ProvisionerTopLevelTabsButton3 then
+          ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton3, 'OnMouseDown', CS.CookDrinkTabShow)
+      else
+          d("[CraftStore] ERROR: ZO_ProvisionerTopLevelTabsButton3 no existe.")
+      end
+
+      if ZO_ProvisionerTopLevelTabsButton4 then
+          ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton4, 'OnMouseDown', CS.CookFurnitureTabShow)
+      else
+          d("[CraftStore] ERROR: ZO_ProvisionerTopLevelTabsButton4 no existe.")
+      end
+
       CS.Cook.hooksInitialized = true
-    end
   end
   if CS.Account.options.userune and craftSkill == CRAFTING_TYPE_ENCHANTING then
       CS.Extern = false
