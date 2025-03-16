@@ -67,6 +67,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
       end
 
       CS.Cook.hooksInitialized = true
+    end
   end
   if CS.Account.options.userune and craftSkill == CRAFTING_TYPE_ENCHANTING then
       CS.Extern = false
