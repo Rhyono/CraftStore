@@ -145,6 +145,12 @@ function CS.STYLE()
 	--[150] = {2,?,X}, -- ?
 	--[151] = {2,?,203835}, -- Hircine Bloodhunter
 	--[152] = {2,?,X}, -- Skingrad Vedette
+	[153] = {2,4159,211055}, -- Exiles Revenge
+	[154] = {2,4160,211072}, -- Militant Monk
+	--[155] = {2,?,x}, -- Stirk Fellowship
+	--[156] = {2,?,X}, -- Coldharbour Dominator
+	[157] = {2,4242, 212119}, -- Tide-Born
+
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -282,6 +288,11 @@ function CS.STYLE()
 	--[150] = {X-1, X, X+15, 0}, -- ?
 	--[151] = {203834, 203835, 203849, 0}, -- Hircine Bloodhunter
 	--[152] = {X-1, X, X+15, 0}, -- Skingrad Vedette
+	[153] = {211054, 211055, 211069, 0}, -- Exiles Revenge
+	[154] = {211071, 211072, 211086, 0}, -- Militant Monk
+	--[155] = {X-1, X, X+15}, -- Stirk Fellowship
+	--[156] = {X-1, X, X+15}, -- Coldharbour Dominator
+	[157] = {212118, 212119, 212133, 0}, -- Tide-Born
 	}
   
 	--build visual motif number list
