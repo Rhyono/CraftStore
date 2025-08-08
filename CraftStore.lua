@@ -2,6 +2,7 @@ local CS = CraftStoreFixedAndImprovedLongClassName
 
 local EM, WM, SM, ZOSF, CSLOOT = EVENT_MANAGER, WINDOW_MANAGER, SCENE_MANAGER, zo_strformat, nil
 local ITEMMARK, TIMER, SELF, MAXCRAFT = {}, {}, false, 999
+local LAST_QUEUE_TIME = 0
 
 local blueprint_limit = 500 -- maximum to show using search
 
@@ -537,6 +538,13 @@ end
 
 function CS.Queue()
   if CS.Init then
+    -- Throttle to run only every 5 seconds instead of every frame
+    local currentTime = GetTimeStamp()
+    if currentTime - LAST_QUEUE_TIME < 5 then
+      return
+    end
+    LAST_QUEUE_TIME = currentTime
+    
   -- ensure at least one alarm is on
     if CS.Account.options.timeralarm ~= 4 or
       CS.Account.options.mountalarm ~= 4 or
