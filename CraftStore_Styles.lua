@@ -149,8 +149,9 @@ function CS.STYLE()
 	[154] = {2,4160,211072}, -- Militant Monk
 	[155] = {2,4240,212085}, -- Stirk Fellowship 
 	[156] = {2,4241,212102}, -- Coldharbour Dominator 
-	[157] = {2,4242, 212119}, -- Tide-Born
-
+	[157] = {2,4242,212119}, -- Tide-Born
+	[158] = {2,4289,212425}, -- Black Soul Gem
+	[159] = {2,4290,212442}, -- Voskrona Guardian
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -286,13 +287,15 @@ function CS.STYLE()
 	[148] = {203473, 203474, 204488, 0}, -- West Weald Legion
 	[149] = {203492, 203493, 203507, 0}, -- Lucent Sentinel
 	--[150] = {X-1, X, X+15, 0}, -- ?
-	[151] = {0, 0, 203849, 0}, -- Hircine Bloodhunter
+	[151] = {0     , 0     , 203849, 0}, -- Hircine Bloodhunter
 	--[152] = {X-1, X, X+15, 0}, -- Skingrad Vedette
 	[153] = {211054, 211055, 211069, 0}, -- Exiles Revenge
 	[154] = {211071, 211072, 211086, 0}, -- Militant Monk
 	[155] = {212084, 212085, 212099, 0}, -- Stirk Fellowship
 	[156] = {212101, 212102, 212116, 0}, -- Coldharbour Dominator
 	[157] = {212118, 212119, 212133, 0}, -- Tide-Born
+	[158] = {212424, 212425, 212439, 0}, -- Black Soul Gem
+	[159] = {212441, 212442, 212456, 0}, -- Voskrona Guardian
 	}
   
 	--build visual motif number list
