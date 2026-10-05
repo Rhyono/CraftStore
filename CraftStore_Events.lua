@@ -12,7 +12,7 @@ function CS.OnRecipeLearned(eventCode,list,id)
 end
 
 function CS.OnStyleLearned(eventCode, styleIndex, chapterIndex, isDefaultRacialStyle)
-  CS.UpdateStyleKnowledge(true) 
+  CS.UpdateStyleKnowledge(true)
 end
 
 function CS.OnSmithingTraitResearchStarted(eventCode, craft, line, trait)
@@ -25,7 +25,7 @@ function CS.OnSmithingTraitResearchStarted(eventCode, craft, line, trait)
 end
 
 function CS.OnSmithingTraitResearchChange(eventCode, craft, line, trait)
-	CS.UpdateResearch()	
+	CS.UpdateResearch()
 	CS.UpdateResearchWindows()
 end
 
@@ -38,15 +38,15 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
   if CS.Account.options.usecook or CS.Account.options.userune then
 	if craftSkill == CRAFTING_TYPE_PROVISIONING or craftSkill == CRAFTING_TYPE_ENCHANTING then
       CS.Cook.craftLevel = GetNonCombatBonus(NON_COMBAT_BONUS_PROVISIONING_LEVEL)
-      CS.Cook.qualityLevel = GetNonCombatBonus(NON_COMBAT_BONUS_PROVISIONING_RARITY_LEVEL)	
+      CS.Cook.qualityLevel = GetNonCombatBonus(NON_COMBAT_BONUS_PROVISIONING_RARITY_LEVEL)
 	end
   end
   if CS.Account.options.usecook and craftSkill == CRAFTING_TYPE_PROVISIONING then
       CS.CookShowCategory(CS.Character.recipe)
       CS.CookShow()
 	  --Update space
-	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)	  
-    
+	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)
+
     if not CS.Cook.hooksInitialized and not IsInGamepadPreferredMode() then
       if ZO_ProvisionerTopLevelTabsButton2 then
           ZO_PreHookHandler(ZO_ProvisionerTopLevelTabsButton2, 'OnMouseDown', CS.CookFoodTabShow)
@@ -73,7 +73,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
       CS.Extern = false
 	-- use CS interface?
 	local useCSRune = true
-	if (not CS.Account.options.userunecreation and CS.Character.runemode == 'craft') or 
+	if (not CS.Account.options.userunecreation and CS.Character.runemode == 'craft') or
 		(not CS.Account.options.useruneextraction and CS.Character.runemode == 'refine') or
 		(not CS.Account.options.userunerecipe and CS.Character.runemode == 'furniture')
 	then
@@ -85,7 +85,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
       local soundPlayer = CRAFTING_RESULTS.enchantSoundPlayer
       soundPlayer.PlaySound = function() return end
 	  --Update space
-	  CS.InventorySpace(CraftStoreFixed_RuneSpaceButtonName)	  
+	  CS.InventorySpace(CraftStoreFixed_RuneSpaceButtonName)
   end
   -- if CS.Account.options.useflask then
     -- if craftSkill == CRAFTING_TYPE_ALCHEMY then
@@ -98,7 +98,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
       local title = CS.Quest[craftSkill].name..'\n'
       local out = ''
       for _, step in pairs(CS.Quest[craftSkill].work) do out = out..step..'\n' end
-	  if CS.Quest[craftSkill] then     
+	  if CS.Quest[craftSkill] then
 	    CraftStoreFixed_QuestText:SetText(title..out)
 	    CraftStoreFixed_Quest:SetHidden(false)
 	  end
@@ -107,7 +107,7 @@ function CS.OnCraftingStationInteract(eventCode,craftSkill)
   --Handle updating research
   if craftSkill == CRAFTING_TYPE_BLACKSMITHING or craftSkill == CRAFTING_TYPE_CLOTHIER or craftSkill == CRAFTING_TYPE_WOODWORKING or craftSkill == CRAFTING_TYPE_JEWELRYCRAFTING then
 	CS.UpdateResearch()
-	CS.UpdateResearchWindows()	
+	CS.UpdateResearchWindows()
   end
 end
 
@@ -118,17 +118,17 @@ function CS.OnCraftCompleted(eventCode,craftSkill)
       CraftStoreFixed_CookAmount:SetText('')
       zo_callLater(function() CS.CookShowCategory(CS.Character.recipe,false) end,500)
 	  --Update space
-	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)	  
+	  CS.InventorySpace(CraftStoreFixed_CookSpaceButtonName)
     end
     if CS.Account.options.userune and craftSkill == CRAFTING_TYPE_ENCHANTING then
         CraftStoreFixed_RuneAmount:SetText('')
       if CS.Rune.refine.glyphs[1] then
         local remove = true
         while remove do
-          if CS.Rune.refine.glyphs[1] and CS.Rune.refine.glyphs[1].crafted and not CS.Rune.refine.crafted then 
-            table.remove(CS.Rune.refine.glyphs,1) 
+          if CS.Rune.refine.glyphs[1] and CS.Rune.refine.glyphs[1].crafted and not CS.Rune.refine.crafted then
+            table.remove(CS.Rune.refine.glyphs,1)
           else
-            remove = false 
+            remove = false
           end
         end
 		if CS.Rune.refine.glyphs[1] then
@@ -141,7 +141,7 @@ function CS.OnCraftCompleted(eventCode,craftSkill)
 			else
 			--Remove only the used glyph
 				table.remove(CS.Rune.refine.glyphs[1].location,1)
-			end	
+			end
 		  else CS.Chat:Print(CS.Loc.nobagspace) end
 		end
       end
@@ -152,11 +152,11 @@ function CS.OnCraftCompleted(eventCode,craftSkill)
     CS.UpdateBag()
 end
 
-function CS.OnEndCraftingStationInteract(eventCode, craftSkill)	
+function CS.OnEndCraftingStationInteract(eventCode, craftSkill)
 	CraftStoreFixed_Quest:SetHidden(true)
 	--CraftStoreFixed_Flask:SetHidden(true)
 	CS.UIClosed = true
-	
+
 	if CS.Account.options.usecook and craftSkill == CRAFTING_TYPE_PROVISIONING then
 		CraftStoreFixed_Cook:SetHidden(true)
 		for x = 2, ZO_ProvisionerTopLevel:GetNumChildren() do ZO_ProvisionerTopLevel:GetChild(x):SetAlpha(1) end
@@ -170,7 +170,7 @@ function CS.OnEndCraftingStationInteract(eventCode, craftSkill)
 		for x = 2, ZO_EnchantingTopLevel:GetNumChildren() do ZO_EnchantingTopLevel:GetChild(x):SetHidden(false) end
 		CS.Rune.job = {amount=0}
 		for x = 1,CraftStoreFixed_RuneGlyphSectionScrollChild:GetNumChildren() do CS.HideControl('CraftStoreFixed_RuneGlyphSectionScrollChildButton'..x) end
-	end	
+	end
 end
 
 function CS.OnGameCameraUIModeChanged(eventCode)
@@ -178,7 +178,7 @@ function CS.OnGameCameraUIModeChanged(eventCode)
 end
 
 function CS.OnActionLayerPushed(eventCode, layerIndex, activeLayerIndex)
-  if CS.UIClosed then ZO_KeybindStripControl:SetHidden(false) CS.UIClosed=false end 
+  if CS.UIClosed then ZO_KeybindStripControl:SetHidden(false) CS.UIClosed=false end
 end
 
 function CS.NewMovementInUIMode(eventCode)
@@ -214,7 +214,7 @@ function CS.OnPlayerActivated(eventCode,initial)
   CS.GetTimer()
   CS.InitPreviews()
   CS.UpdateResearch()
-  CS.UpdateResearchWindows()  
+  CS.UpdateResearchWindows()
   CS.UpdateBag()
   CS.HideStyles(true)
   CS.HideCrownStyles(true)
@@ -224,7 +224,7 @@ function CS.OnPlayerActivated(eventCode,initial)
   CS.HideUnknownBlueprints(true)
   CS.HideKnownRecipes(true)
   CS.HideUnknownRecipes(true)
-  CS.Init = true 
+  CS.Init = true
   EM:UnregisterForEvent('CSEE',EVENT_PLAYER_ACTIVATED)
 end
 
@@ -248,13 +248,13 @@ function CS.HouseBankQuantity(bag,slot,link)
 	--slot is used during initialize/add actions; link is used to sum during a remove
 	if slot then
 		link = CS.StripLink(GetItemLink(bag,slot))
-	end	
+	end
 	local quantity = 0
 	for index,data in pairs(items) do
 		if link == CS.StripLink(GetItemLink(data.bagId,data.slotIndex)) then
 			local _,stack = GetItemInfo(data.bagId,data.slotIndex)
 			quantity = quantity + stack
-		end	
+		end
 	end
 	return quantity
 end
@@ -269,31 +269,31 @@ function CS.OnInventorySlotAdded(bag,slot,data,replace)
   --inline ternary did not work, handle line by line
   CS.Account.storage[link][CS.Lang.en.craftbag] = a3
   if a3 == 0 then CS.Account.storage[link][CS.Lang.en.craftbag] = nil end
-	
+
   CS.Account.storage[link][CS.Lang.en.bank] = a2
   if a2 == 0 then CS.Account.storage[link][CS.Lang.en.bank] = nil end
-  
+
   CS.Account.storage[link][CS.CurrentPlayer] = a1
   if a1 == 0 then CS.Account.storage[link][CS.CurrentPlayer] = nil end
-  
+
   if IsHouseBankBag(bag) then
 	if not CS.Account.storage[link][CS.Lang.en.housebank..(bag-7)] then
 		CS.Account.storage[link][CS.Lang.en.housebank] = 0
-	end	
+	end
 	CS.Account.storage[link][CS.Lang.en.housebank..(bag-7)] = CS.HouseBankQuantity(bag,slot)
-  end	
+  end
   CS.UpdateMatsInfo(link)
   data.uid = Id64ToString(GetItemUniqueId(bag,slot))
   data.lnk = link
-  if CS.IsValidEquip(GetItemLinkEquipType(link)) then 
+  if CS.IsValidEquip(GetItemLinkEquipType(link)) then
 	if CS.IsLocked(bag,slot) then
 		CS.UpdateStored('removed',data,replace)
-	else	
+	else
 		CS.UpdateStored('added',data)
 	end
-  end	
+  end
 end
-  
+
 function CS.OnInventorySlotRemoved(bag,slot,data)
   if bag ~= BAG_BACKPACK and bag~=BAG_BANK and bag~=BAG_SUBSCRIBER_BANK and bag~=BAG_VIRTUAL and not IsHouseBankBag(bag) then return end
   local link = CS.StripLink(data.lnk)
@@ -302,15 +302,15 @@ function CS.OnInventorySlotRemoved(bag,slot,data)
   --inline ternary did not work, handle line by line
   CS.Account.storage[link][CS.Lang.en.craftbag] = a3
   if a3 == 0 then CS.Account.storage[link][CS.Lang.en.craftbag] = nil end
-	
+
   CS.Account.storage[link][CS.Lang.en.bank] = a2
   if a2 == 0 then CS.Account.storage[link][CS.Lang.en.bank] = nil end
-  
+
   CS.Account.storage[link][CS.CurrentPlayer] = a1
   if a1 == 0 then CS.Account.storage[link][CS.CurrentPlayer] = nil end
   if IsHouseBankBag(bag) then
 	CS.Account.storage[link][CS.Lang.en.housebank..(bag-7)] = CS.HouseBankQuantity(bag,false,link)
-  end  
+  end
   CS.UpdateMatsInfo(link)
   if CS.IsValidEquip(GetItemLinkEquipType(link)) then CS.UpdateStored('removed',data) end
 end
@@ -379,13 +379,13 @@ end
 
 function CS.OnAddOnLoaded(eventCode,addOnName)
   if addOnName ~= CS.Name then return end
-  
+
   CS.Style = CS.STYLE()
   CS.Style.RemoveUnpublishedStyles()
   CS.Style.CompileStyles()
   CS.Style.CompilePartialStyles({[114]=true,[119]=true})
   CS.Crafting.CompileTraits()
-  --cs_flask = CS.CS.Flask()  
+  --cs_flask = CS.CS.Flask()
   CS.Account = ZO_SavedVars:NewAccountWide('CraftStore_Account',3,GetWorldName(),CS.AccountInit)
   CS.Character = ZO_SavedVars:NewCharacterIdSettings('CraftStore_Character',2,GetWorldName(),CS.CharInit)
 
@@ -407,26 +407,32 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
 
 		--furnishing knowledge
 		CS.Data.furnisher.knowledge[char] = LBE:ParseTrusted(CS.Account.furnisher.knowledge[char],CS.Name,CS.LBE.Furnisher)
-		
+
 		--style knowledge
 		CS.Data.style.knowledge[char] = LBE:ParseTrusted(CS.Account.style.knowledge[char],CS.Name,CS.LBE.Styles)
-		
+
 		--trait tracking
 		CS.Data.crafting.studies[char] = LBE:ParseTrusted(CS.Account.crafting.studies[char],CS.Name,CS.LBE.Crafting)
-		
+
 		--researched tracking
-		CS.Data.crafting.researched[char] = LBE:MergeTables(CS.Account.crafting.researching[char],LBE:ParseTrusted(CS.Account.crafting.researched[char],CS.Name,CS.LBE.Researched))	
+		CS.Data.crafting.researched[char] = LBE:MergeTables(CS.Account.crafting.researching[char],LBE:ParseTrusted(CS.Account.crafting.researched[char],CS.Name,CS.LBE.Researched))
 	end
-	
+
 	-- temporary saved var cleanup
 	CS.Account.crafting.research = nil
 
   if CS.Character.income[1] ~= GetDate()then
     CS.Character.income[1] = GetDate()
     CS.Character.income[2] = GetCurrentMoney()
-  end 
- 
-  ZO_CreateStringId('SI_BINDING_NAME_SHOW_CRAFTSTOREFIXED_WINDOW',CS.Loc.TT[15])
+  end
+
+  ZO_CreateStringId('SI_BINDING_NAME_CRAFTSTORE_WINDOW',CS.Loc.TT[15])
+
+  ZO_CreateStringId('SI_BINDING_NAME_CRAFTSTORE_STYLES', CS.Loc.TT[36])
+  ZO_CreateStringId('SI_BINDING_NAME_CRAFTSTORE_RUNES', CS.Loc.TT[37])
+  ZO_CreateStringId('SI_BINDING_NAME_CRAFTSTORE_PROVISIONING', CS.Loc.TT[38])
+  ZO_CreateStringId('SI_BINDING_NAME_CRAFTSTORE_FURNISHINGS', CS.Loc.TT[39])
+
   SM:RegisterTopLevel(CraftStoreFixed_Panel,false)
   EM:RegisterForEvent('CSEE',EVENT_QUEST_CONDITION_COUNTER_CHANGED,CS.OnQuestConditionCounterChanged)
   EM:RegisterForEvent("CSEE",EVENT_RECIPE_LEARNED,CS.OnRecipeLearned)
@@ -448,31 +454,31 @@ function CS.OnAddOnLoaded(eventCode,addOnName)
   EM:RegisterForEvent('CSEE',EVENT_PLAYER_DEACTIVATED,CS.OnPlayerDeactivated)
   EM:RegisterForEvent('CSEE',EVENT_INVENTORY_SINGLE_SLOT_UPDATE, CS.OnInventorySingleSlotUpdate)
   EM:RegisterForEvent('CSEE',EVENT_MONEY_UPDATE, CS.OnMoneyUpdate)
-  
+
   --Esc close
   --SCENE_MANAGER:RegisterTopLevel(CraftStoreFixed_Blueprint_Window, false)
   --SCENE_MANAGER:RegisterTopLevel(CraftStoreFixed_Recipe_Window, false)
   --SCENE_MANAGER:RegisterTopLevel(CraftStoreFixed_Style_Window, false)
   --SCENE_MANAGER:RegisterTopLevel(CraftStoreFixed_Rune, false)
-  
+
   CHAMPION_PERKS_SCENE:RegisterCallback('StateChange',CS.OnChampionPerksSceneStateChange)
-  
+
   SHARED_INVENTORY:RegisterCallback('SlotAdded',CS.OnInventorySlotAdded)
   SHARED_INVENTORY:RegisterCallback('SlotRemoved',CS.OnInventorySlotRemoved)
   ZO_PreHookHandler(ZO_StackSplit,'OnShow', CS.OnStackSplitShow)
   ZO_PreHookHandler(ZO_EnchantingTopLevelModeMenuBarButton1,'OnMouseDown', CS.RuneCreationTabShow)
   ZO_PreHookHandler(ZO_EnchantingTopLevelModeMenuBarButton2,'OnMouseDown', CS.RuneExtractionTabShow)
   ZO_PreHookHandler(ZO_EnchantingTopLevelModeMenuBarButton3,'OnMouseDown', CS.RuneRecipeTabShow)
-  
+
   CS.LAM = LAM:RegisterAddonPanel(CS.Name, CS.PanelData)
   LAM:RegisterOptionControls(CS.Name, CS.OptionsTable)
-  
+
   CS.ScrollText()
   CS.TooltipHandler()
   if type(CS.Character.previewtype) == "string" or not CS.Character.previewType then CS.Character.previewtype=1 end
   CS.Style.UpdatePreview(CS.Character.previewtype)
   CS.PanelInitialize()
-  
+
   --CS.LMMAdd()
   EM:UnregisterForEvent('CSEE',EVENT_ADD_ON_LOADED)
 end

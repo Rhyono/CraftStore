@@ -1,9 +1,27 @@
 <Bindings>
   <Layer name="SI_KEYBINDINGS_CATEGORY_GENERAL">
     <Category name="SI_BINDING_NAME_CRAFTSTORE">
-      <Action name="SHOW_CRAFTSTOREFIXED_WINDOW">
+
+      <Action name="CRAFTSTORE_WINDOW">
         <Down>CraftStoreFixedAndImprovedLongClassName.ShowMain()</Down>
       </Action>
+
+      <Action name="CRAFTSTORE_STYLES">
+        <Down>CraftStoreFixedAndImprovedLongClassName.SetAllStyles()</Down>
+      </Action>
+
+      <Action name="CRAFTSTORE_RUNES">
+        <Down>CraftStoreFixedAndImprovedLongClassName.RuneView(1)</Down>
+      </Action>
+
+      <Action name="CRAFTSTORE_PROVISIONING">
+        <Down>CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_Recipe_Window);CraftStoreFixedAndImprovedLongClassName.RecipeShowCategory(CraftStoreFixedAndImprovedLongClassName.Character.recipe)</Down>
+      </Action>
+
+      <Action name="CRAFTSTORE_FURNISHINGS">
+        <Down>CraftStoreFixedAndImprovedLongClassName.ControlShow(CraftStoreFixed_Blueprint_Window);CraftStoreFixedAndImprovedLongClassName.BlueprintShowCategory(CraftStoreFixedAndImprovedLongClassName.Character.furniture)</Down>
+      </Action>
+
     </Category>
   </Layer>
 </Bindings>

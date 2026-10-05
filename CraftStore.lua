@@ -544,7 +544,7 @@ function CS.Queue()
       return
     end
     LAST_QUEUE_TIME = currentTime
-    
+
   -- ensure at least one alarm is on
     if CS.Account.options.timeralarm ~= 4 or
       CS.Account.options.mountalarm ~= 4 or
@@ -1729,7 +1729,8 @@ function CS.CookShowRecipe(control,list,id,inc,sound,enchanting)
       local count, color = GetCurrentRecipeIngredientCount(list,id,num)
     local _,_,qtyReq = GetRecipeIngredientItemInfo(list,id,num)
       if count < qtyReq then
-        color = 'FF0000'; fault = true
+        color = 'FF0000'
+        fault = true
       else
         color = '00FF00'
       end
