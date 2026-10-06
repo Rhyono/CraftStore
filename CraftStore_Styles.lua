@@ -10,7 +10,7 @@ function CS.STYLE()
   local previewItems = {itemHeavy, itemMedium, itemRobe, itemJack}
   local item = itemHeavy
   
-  local styles = { -- visual id, achievement id, axes motif (or motif book id if no chapters), type
+  local styles = { -- type, achievement id, first motif id, visual id
     [ 1] = {1,1025,16425}, -- Breton
     [ 2] = {1,1025,16427}, -- Redguard
     [ 3] = {1,1025,16426}, -- Orc
@@ -152,7 +152,7 @@ function CS.STYLE()
 	[157] = {2,4242,212119}, -- Tide-Born
 	[158] = {2,4289,212425}, -- Black Soul Gem
 	[159] = {2,4290,212442}, -- Voskrona Guardian
-	[160] = {2,4491,223948}, -- Koldane Cartel
+	[162] = {2,4491,223948}, -- Koldane Cartel
   }
   --|H1:item:96954:5:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0|h|h
   
@@ -297,7 +297,7 @@ function CS.STYLE()
 	[157] = {212118, 212119, 212133, 0}, -- Tide-Born
 	[158] = {212424, 212425, 212439, 0}, -- Black Soul Gem
 	[159] = {212441, 212442, 212456, 0}, -- Voskrona Guardian
-	[160] = (223947, 223948, 223962, 0), -- Koldane Cartel
+	[162] = {223947, 223948, 223962, 0}, -- Koldane Cartel
 	}
   
 	--build visual motif number list
